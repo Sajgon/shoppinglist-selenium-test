@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cucumber": "cucumber-js & exit 0"
   },
-  "author": "Thomas",
+  "author": "Pelle, Anton, Ola",
   "license": "MIT",
   "dependencies": {
     "cucumber": "^2.0.0-rc.9"
