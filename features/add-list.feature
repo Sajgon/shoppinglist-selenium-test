@@ -7,7 +7,7 @@ Feature: Adding a list
         When I choose to create a list and give it a unique name
         Then a list will be created
 
-    Scenario: Trying to create a new grocery list without a unqie name
+    Scenario: Trying to create a new grocery list without a uniqe name
         Given that I have started the application
         When I choose to create a list without a name
         Then no list will be created
