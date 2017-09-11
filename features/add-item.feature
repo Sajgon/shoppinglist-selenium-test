@@ -4,11 +4,11 @@ Feature: Adding an item to the grocery-list
 
     Scenario Outline: Adding an item to an empty grocery list
         Given that I have an grocery list
-        When I add <number> of the item <item> with the category <category> to the list
-        Then I should have <number> of the item <item> in my grocery list.
+        When I add <quantity> of the item <item> with the category <category> to the list
+        Then I should have <quantity> of the item <item> in my grocery list.
 
         Examples:
-            |items   |category  |number|
-            |milk    |dairy     |5     |
-            |cucumber|vegetables|3     |
-            |banana  |     fruit|6     |
+            |item    |category  |quantity|
+            |milk    |dairy     |5       |
+            |cucumber|vegetables|3       |
+            |banana  |fruit     |6       |

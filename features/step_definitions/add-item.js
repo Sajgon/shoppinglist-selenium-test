@@ -4,26 +4,21 @@ let GroceryList = require('../../grocery-list.js');
 
 defineSupportCode(function({Given, When, Then}) {
 
-  // let theList;
+    let TestList = {};
+    let name = "";
 
-    Given('that I have an grocery list', function (callback) {
-        // theList = new GroceryList('Frukt');
-
-        callback();
+    Given('that I have an grocery list', function() {
+        name = "My Grocery List"
+        TestList = new GroceryList(name);
+        assert.ok(TestList instanceof GroceryList);
     });
 
-    When('I add an item to the list', function (callback) {
-    // theList.addToList('Banan');
-
-        callback();
+    When(/I add (.*) of the item (.*) with the category (.*) to the list/,function(quantity,item,category){
+        TestList.addToList(item, quantity, category);
+        assert(TestList == true && TestList.items[0].name == item);
     });
 
-    Then('I should have one item in my grocery list.', function (callback) {
-        // assert(
-        //   theList.items.length === 1,
-        //   'After adding 1 item to GroceryList it remember the item.'
-        // );
-
-        callback();
+    Then(/I should have (.*) of the item (.*) in my grocery list./, function (quantity,item) {
+        assert(TestList == true && TestList.items[0].quantity == quantity && TestList.items[0].name == item);
     });
 });
