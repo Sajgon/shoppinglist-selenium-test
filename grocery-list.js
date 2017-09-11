@@ -1,3 +1,6 @@
+let GroceryListItem = require('./grocery-list-item');
+
+
 module.exports = class GroceryList {
 
     constructor(name) {
@@ -10,9 +13,13 @@ module.exports = class GroceryList {
         this.items = [];
     }
 
-    addItem(itemName) {
+    addItem(name, quantity, category) {
+
         // lägga till matvaror i sin shoppinglista.
-        // namn, kvantitet och kategori, bought = false (Grönsaker, Frukt etc).
+        // namn, kvantitet och kategori (Grönsaker, Frukt etc), samt bought = false
+
+        let newItem = new GroceryListItem(name, quantity, category);
+        this.items.push(newItem);
     }
 
     removeItem(itemName) {
