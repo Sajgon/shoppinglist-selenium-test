@@ -14,7 +14,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     When(/I add (.*) of the item (.*) with the category (.*) to the list/,function(quantity,item,category){
-        TestList.addToList(item, quantity, category);
+        TestList.addItem(item, quantity, category);
         assert(TestList == true && TestList.items[0].name == item);
     });
 
