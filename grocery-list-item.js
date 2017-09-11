@@ -10,7 +10,7 @@ module.exports = class GroceryListItem {
 
     this.name = name;
     this.quantity = quantity;
-    this.categroy = category;
+    this.category = category;
     this.bought = false;
   }
 
