@@ -2,11 +2,15 @@ let GroceryList = require('./grocery-list');
 
 module.exports = class GroceryListItem {
 
-  constructor(name){
+  constructor(name, quantity, category, bought){
+
      if(typeof name !== "string" || name === ""){
       throw new Error("A list item must have a name that is an non-empty string.");
     }
+
     this.name = name;
+    this.quantity = quantity;
+    this.categroy = category;
     this.bought = false;
   }
 
