@@ -14,11 +14,15 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     When(/I add (.*) of the item (.*) with the category (.*) to the list/,function(quantity,item,category){
-        TestList.addItem(item, quantity, category);
-        assert(TestList == true && TestList.items[0].name == item);
+        assert.doesNotThrow(()=>TestList.addItem(item, quantity, category));
     });
 
-    Then(/I should have (.*) of the item (.*) in my grocery list./, function (quantity,item) {
-        assert(TestList == true && TestList.items[0].quantity == quantity && TestList.items[0].name == item);
+    Then(/I should have (.*) of the item (.*) of the category (.*) in my grocery list./, function ( quantity,item,category) {
+        assert(
+            TestList.items &&
+            TestList.items.length == 1 &&
+            TestList.items[0].quantity == quantity &&
+            TestList.items[0].name == item
+        );
     });
 });
