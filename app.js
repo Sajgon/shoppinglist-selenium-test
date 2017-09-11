@@ -3,6 +3,10 @@ let GroceryList = require('./grocery-list');
 let GroceryListTest = require('./grocery-list-item');
 
 
+// Tillåtna kategorier
+let categories = ["Frukt", "Grönsak", "Kött", "Mejeriprodukt", "Krydda", "Övrigt"];
+
+
 // Make own tests
 
 let a = new GroceryList('Första Listan');
