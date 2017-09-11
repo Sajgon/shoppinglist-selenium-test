@@ -6,6 +6,7 @@ Feature: Adding a list
         Given that I have started the application
         When I choose to create a list and give it a unique name
         Then a list will be created
+        And it will contain no items
 
     Scenario: Trying to create a new grocery list without a uniqe name
         Given that I have started the application
