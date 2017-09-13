@@ -12,3 +12,9 @@ Feature: Adding an item to the grocery-list
             |milk    |dairy     |5       |
             |cucumber|vegetables|3       |
             |banana  |fruit     |6       |
+
+    Scenario: Adding an item that already exists in an grocery list 
+        Given that I have an grocery list
+        And I have added 1 of the item potato with the category rootfruit to the list
+        When I also add 1 of the item potato with the category rootfruit to the list
+        Then a error should occur

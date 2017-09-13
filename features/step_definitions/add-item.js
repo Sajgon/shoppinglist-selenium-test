@@ -25,4 +25,17 @@ defineSupportCode(function({Given, When, Then}) {
             TestList.items[0].name == item
         );
     });
+
+    Given('I have added {int} of the item potato with the category rootfruit to the list', function (int) {
+        assert.doesNotThrow(()=>TestList.addItem("potato", int, "rootfruit"));
+    });
+
+    When('I also add {int} of the item potato with the category rootfruit to the list', function (int) {
+        assert.throws(()=> TestList.addItem("potato", int, "rootfruit"));
+    });
+    
+    Then('a error should occur', function() {
+        assert.throws(()=> TestList.addItem("potato", int, "rootfruit"));
+   });
+
 });

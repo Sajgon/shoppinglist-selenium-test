@@ -17,6 +17,12 @@ module.exports = class GroceryList {
         // lägga till matvaror i sin shoppinglista.
         // namn, kvantitet och kategori (Grönsaker, Frukt etc), samt bought = false
 
+        this.items.forEach(function(item){
+            if(item.name == name){
+                throw new Error("There's already an item with that name.");
+            }
+        });
+
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
     }
