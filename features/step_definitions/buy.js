@@ -32,6 +32,7 @@ defineSupportCode(function({Given, When, Then}) {
         for(let i=0; i < TestList.items.length; i++){
             if(TestList.items[i].name == item){
                 assert(TestList.items[i].bought == true);
+				break;
             }
         }
     });

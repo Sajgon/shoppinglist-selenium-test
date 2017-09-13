@@ -19,6 +19,9 @@ module.exports = class GroceryList {
 
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
+		
+		console.log("newItem");
+		console.log(newItem);
     }
 
     removeItem(itemName) {
@@ -33,8 +36,21 @@ module.exports = class GroceryList {
     }
 
     buy(itemName) {
-        // markera varor som köpta
+        // markera vara som köpta
+		let item = {};
 
+		// Finn item med korrekt namn
+		for(var i = 0; i < this.items.length; i++){
+			if(this.items[i].name === itemName){
+				// Varan är nu köpt
+				this.items[i].bought = true;
+				item = this.items[i];
+				break;
+			}
+		}
+	
+		if(item){return true;}
+		return false;
     }
 
     sortAlphabetically() {
