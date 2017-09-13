@@ -23,4 +23,25 @@ defineSupportCode(function({Given, When, Then}) {
     Then('it will contain no items', function() {
         assert(TestList.items.constructor === Array && TestList.items.length === 0);
     });
+
+    //Trying to add list with out a name
+    When('I choose to create a list without a name', function() {
+        TestList = new GroceryList();
+    });
+    
+    Then('no list will be created', function() {
+
+        // assert.throws(()=>TestList = new GroceryList())
+
+        assert.throws(
+            () => {
+                TestList = new GroceryList()
+            },
+            Error
+        );
+    });
+
+    Then('an error will occur', function() {
+
+    });
 });

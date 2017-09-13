@@ -16,7 +16,7 @@ module.exports = class GroceryList {
 
         // lägga till matvaror i sin shoppinglista.
         // namn, kvantitet och kategori (Grönsaker, Frukt etc), samt bought = false
-		
+
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
 		
@@ -25,6 +25,7 @@ module.exports = class GroceryList {
     }
 
     removeItem(itemName) {
+
         // ta bort matvara i sin shoppinglista.
 
         let filteredArray = this.items.filter((item) => {
@@ -32,7 +33,6 @@ module.exports = class GroceryList {
         });
 
         this.items = filteredArray;
-
     }
 
     buy(itemName) {
@@ -51,6 +51,23 @@ module.exports = class GroceryList {
 	
 		if(item){return true;}
 		return false;
+    }
+
+    sortAlphabetically() {
+      // sortera listor i bokstavsordning.
+
+    }
+
+    sortByCategory() {
+      // sortera listor efter kategori.
+    }
+
+    showBoughtItems(...args) {
+      // bara kunna visa köpta varor.
+    }
+
+    showUnboughtItems(...args) {
+      // bara kunna visa oköpta varor.
     }
 
 }
