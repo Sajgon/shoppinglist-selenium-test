@@ -36,9 +36,10 @@ defineSupportCode(function({Given, When, Then}) {
         }
     });
 
-    //NON_EXISTENT ITEMS
+    //NON_EXISTENT ITEMS:
 
     When(/I try to mark the \(non-existent\) item (.*) as bought/, function(item) {
+        //Osäker på vad som ska testas här, metoden kallas ju i nästa then.
         //TestList.buy(item);
     });
     
