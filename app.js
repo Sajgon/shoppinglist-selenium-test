@@ -10,16 +10,17 @@ var randomItemCategory = itemCategories[Math.floor(itemCategories.length*Math.ra
 
 // Ola Test
 let a = new GroceryList('Första Listan');
-a.addItem('Punk IPA', 1, 'Matvaror att köpa',);
-a.addItem('Plommon', 120, 'Matvaror att köpa');
-a.addItem('Väska', 120, 'Saker att köpa');
+a.addItem('Punk IPA', 1, 'Mat',);
+a.addItem('Plommon', 120, 'Mat');
+a.addItem('Väska', 120, 'Stuff');
+a.addItem('Lingon', 120, 'Mat');
+a.addItem('Abba', 1, 'Stuff');
+a.addItem('Saab', 1, 'Stuff');
 a.removeItem('Plommon');
 
+a.sortAlphabetically();
+
 console.log(a);
-
-let b = new GroceryListItem('väska');
-
-console.log(b);
 
 
 
