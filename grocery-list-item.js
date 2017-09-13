@@ -7,7 +7,7 @@ module.exports = class GroceryListItem {
     if(typeof name !== "string" || name === ""){
         throw new Error("A list item must have a name that is a non-empty string.");
     }
-
+	
     this.name = name;
     this.quantity = quantity;
     this.category = category;
@@ -28,7 +28,6 @@ module.exports = class GroceryListItem {
 
   unboughtItems(...args) {
     // bara kunna visa oköpta varor.
-
   }
 
 }
