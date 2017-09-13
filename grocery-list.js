@@ -22,12 +22,11 @@ module.exports = class GroceryList {
     }
 
     removeItem(itemName) {
+        // ta bort matvara i sin shoppinglista.
 
-        // let filteredArray = this.items.filter((item) => {
-        //     return item.name.indexOf(itemName);
-        // });
-
-        // this.items = filteredArray;
+        let filteredArray = this.items.filter((item) => {
+            return item.name.indexOf(itemName);
+        });
     }
 
     buy(itemName) {
