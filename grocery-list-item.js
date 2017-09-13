@@ -36,7 +36,6 @@ module.exports = class GroceryListItem {
 
   unboughtItems(...args) {
     // bara kunna visa oköpta varor.
-
   }
 
 }
