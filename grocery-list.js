@@ -22,6 +22,7 @@ module.exports = class GroceryList {
     }
 
     removeItem(itemName) {
+
         // ta bort matvara i sin shoppinglista.
 
         let filteredArray = this.items.filter((item) => {
@@ -34,6 +35,23 @@ module.exports = class GroceryList {
     buy(itemName) {
         // markera varor som köpta
 
+    }
+
+    sortAlphabetically() {
+      // sortera listor i bokstavsordning.
+
+    }
+
+    sortByCategory() {
+      // sortera listor efter kategori.
+    }
+
+    showBoughtItems(...args) {
+      // bara kunna visa köpta varor.
+    }
+
+    showUnboughtItems(...args) {
+      // bara kunna visa oköpta varor.
     }
 
 }
