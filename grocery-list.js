@@ -17,18 +17,19 @@ module.exports = class GroceryList {
 
         // lägga till matvaror i sin shoppinglista.
         // namn, kvantitet och kategori (Grönsaker, Frukt etc), samt bought = false
-
+		
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
     }
 
     removeItem(itemName) {
-        // ta bort matvaror i sin shoppinglista.
+        // ta bort matvara i sin shoppinglista.
+		
     }
 
     buy(itemName) {
         // markera varor som köpta
-
+		
     }
 
 }
