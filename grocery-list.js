@@ -52,12 +52,12 @@ module.exports = class GroceryList {
 				break;
 			}
 		}
-	
+
 		if(item){return true;}
 		return false;
     }
 
-    sortAlphabetically() {
+    sortAlphabetical() {
 
         // sortera listor i bokstavsordning.
 
@@ -86,19 +86,19 @@ module.exports = class GroceryList {
     showUnboughtItems(...args) {
       // bara kunna visa oköpta varor.
     }
-	
+
 	filterBoughtItems(){
 		// Visa endast köpta varor
         let filteredArray = this.items.filter((item) => {
             return item.bought === true;
-        });		
+        });
 	}
-	
+
 	filterUnboughtItems(){
 		// Visa endast oköpta varor
 		let filteredArray = this.items.filter((item) => {
             return item.bought === false;
-        });	
+        });
 	}
 
 }

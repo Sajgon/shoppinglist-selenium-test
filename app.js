@@ -18,7 +18,7 @@ a.addItem('Abba', 1, 'Stuff');
 a.addItem('Saab', 1, 'Stuff');
 a.removeItem('Plommon');
 
-a.sortAlphabetically();
+a.sortAlphabetical();
 
 console.log(a);
 
