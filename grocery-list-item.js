@@ -16,6 +16,7 @@ module.exports = class GroceryListItem {
 
   sortAlphabetically() {
     // sortera listor i bokstavsordning.
+
   }
 
   sortByCategory() {

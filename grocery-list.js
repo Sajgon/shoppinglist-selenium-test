@@ -27,6 +27,8 @@ module.exports = class GroceryList {
         let filteredArray = this.items.filter((item) => {
             return item.name.indexOf(itemName);
         });
+
+        this.items = filteredArray;
     }
 
     buy(itemName) {
