@@ -19,9 +19,7 @@ module.exports = class GroceryList {
 
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
-		
-		console.log("newItem");
-		console.log(newItem);
+
     }
 
     removeItem(itemName) {
@@ -69,5 +67,19 @@ module.exports = class GroceryList {
     showUnboughtItems(...args) {
       // bara kunna visa oköpta varor.
     }
+	
+	filterBoughtItems(){
+		// Visa endast köpta varor
+        let filteredArray = this.items.filter((item) => {
+            return item.bought === true;
+        });		
+	}
+	
+	filterUnboughtItems(){
+		// Visa endast oköpta varor
+		let filteredArray = this.items.filter((item) => {
+            return item.bought === false;
+        });	
+	}
 
 }
