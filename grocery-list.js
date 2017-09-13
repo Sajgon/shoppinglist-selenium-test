@@ -38,7 +38,20 @@ module.exports = class GroceryList {
     }
 
     sortAlphabetically() {
-      // sortera listor i bokstavsordning.
+
+        // sortera listor i bokstavsordning.
+
+        let sorted = this.items.sort((a,b) => {
+            if(a.name < b.name) {
+                return -1;
+            } else if (a.name > b.name) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+
+        return sorted;
 
     }
 
