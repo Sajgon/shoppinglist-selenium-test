@@ -11,5 +11,4 @@ Feature: Adding a list
     Scenario: Trying to create a new grocery list without a uniqe name
         Given that I have started the application
         When I choose to create a list without a name
-        Then no list will be created
-        And an error will occur
+        Then no list will be created and an error will occur

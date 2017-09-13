@@ -6,6 +6,7 @@ defineSupportCode(function({Given, When, Then}) {
 
     let TestList = {};
     let name = "";
+    let TestListWithoutName;
 
     Given('that I have started the application', function() {
 
@@ -26,22 +27,11 @@ defineSupportCode(function({Given, When, Then}) {
 
     //Trying to add list with out a name
     When('I choose to create a list without a name', function() {
-        TestList = new GroceryList("");
+        TestList = new GroceryList();
+        assert.throws(()=>TestListWithoutName = new GroceryList());
     });
     
-    Then('no list will be created', function() {
-
-        // assert.throws(()=>TestList = new GroceryList())
-
-        assert.throws(
-            () => {
-                TestList = new GroceryList()
-            },
-            Error
-        );
-    });
-
-    Then('an error will occur', function() {
-
+    Then('no list will be created and an error will occur', function() {
+        assert(TestListWithoutName === undefined)
     });
 });
