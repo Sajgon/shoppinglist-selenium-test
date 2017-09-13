@@ -1,6 +1,5 @@
 let GroceryListItem = require('./grocery-list-item');
 
-
 module.exports = class GroceryList {
 
     constructor(name) {
@@ -24,7 +23,13 @@ module.exports = class GroceryList {
 
     removeItem(itemName) {
         // ta bort matvara i sin shoppinglista.
-		
+
+        let filteredArray = this.items.filter((item) => {
+            return item.name.indexOf(itemName);
+        });
+
+        this.items = filteredArray;
+
     }
 
     buy(itemName) {
