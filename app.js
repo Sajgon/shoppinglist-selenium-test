@@ -5,7 +5,7 @@ let GroceryList = require('./grocery-list');
 let GroceryListItem = require('./grocery-list-item');
 
 
-// Tillåtna kategorier
+// Tillåtna kategorier [Not in use]
 var itemCategories = ["Frukt", "Grönsak", "Kött", "Mejeriprodukt", "Krydda", "Övrigt"];
 // En random tillåten kategori
 var randomItemCategory = itemCategories[Math.floor(itemCategories.length*Math.random())];

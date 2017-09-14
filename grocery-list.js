@@ -5,7 +5,7 @@ module.exports = class GroceryList {
     constructor(name) {
 
         if (typeof name !== "string" || name === "") {
-            throw new Error("A list must have a name that is an non-empty string.");
+            throw new Error("A list must have a name that is a non-empty string.");
         }
 
         this.name = name;
@@ -93,6 +93,7 @@ module.exports = class GroceryList {
         let filteredArray = this.items.filter((item) => {
             return item.bought === true;
         });
+        return filteredArray;
 	}
 
 	filterUnboughtItems(){
@@ -100,6 +101,7 @@ module.exports = class GroceryList {
 		let filteredArray = this.items.filter((item) => {
             return item.bought === false;
         });
+        return filteredArray;
 	}
 
 }
