@@ -1,5 +1,3 @@
-let GroceryList = require('./grocery-list');
-
 module.exports = class GroceryListItem {
 
   constructor(name, quantity, category){
@@ -21,21 +19,4 @@ module.exports = class GroceryListItem {
     this.category = category;
     this.bought = false;
   }
-
-  sortAlphabetically() {
-    // sortera listor i bokstavsordning.
-  }
-
-  sortByCategory() {
-    // sortera listor efter kategori.
-  }
-
-  boughtItems(...args) {
-    // bara kunna visa köpta varor.
-  }
-
-  unboughtItems(...args) {
-    // bara kunna visa oköpta varor.
-  }
-
 }

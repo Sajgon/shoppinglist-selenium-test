@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cucumber": "cucumber-js & exit 0",
     "only": "cucumber-js features/remove-item.feature & exit 0",
-    "pelle": "cucumber-js features/add-item.feature & exit 0",
+    "pelle": "cucumber-js features/get-bought-items.feature & exit 0",
     "ola": "cucumber-js features/sort-alphabetical.feature & exit 0",
     "david": "cucumber-js features/get-bought-items.feature & exit 0",
     "anton": "cucumber-js features/get-unbought-items.feature & exit 0"
@@ -15,6 +15,9 @@
   "author": "Pelle, Anton, Ola",
   "license": "MIT",
   "dependencies": {
-    "cucumber": "^2.0.0-rc.9"
+    "bootstrap": "^3.3.7",
+    "cucumber": "^2.0.0-rc.9",
+    "express": "^4.15.4",
+    "npm": "^5.4.1"
   }
 }

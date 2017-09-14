@@ -1,5 +1,6 @@
-let GroceryListItem = require('./grocery-list-item');
+(()=>{
 
+let GroceryListItem = require('./grocery-list-item');
 module.exports = class GroceryList {
 
     constructor(name) {
@@ -80,14 +81,6 @@ module.exports = class GroceryList {
       // sort lists by category
     }
 
-    showBoughtItems(...args) {
-      // bara kunna visa köpta varor.
-    }
-
-    showUnboughtItems(...args) {
-      // bara kunna visa oköpta varor.
-    }
-
 	filterBoughtItems(){
 		// Visa endast köpta varor
         let filteredArray = this.items.filter((item) => {
@@ -105,3 +98,5 @@ module.exports = class GroceryList {
 	}
 
 }
+
+})();
