@@ -59,7 +59,7 @@ module.exports = class GroceryList {
         // Gotcha. Need to create a copy of the items list,
         // otherwise this.items will be sorted
 
-        let sorted = this.items.slice().sort((a,b) => {
+        let sortedByName = this.items.slice().sort((a,b) => {
             if(a.name < b.name) {
                 return -1;
             } else if (a.name > b.name) {
@@ -69,12 +69,24 @@ module.exports = class GroceryList {
             }
         });
 
-        return sorted;
+        return sortedByName;
 
     }
 
     sortByCategory() {
-      // sort lists by category
+
+      let sortedByCategory = this.items.slice().sort((a,b) => {
+          if(a.category < b.category) {
+              return -1;
+          } else if (a.category > b.category) {
+              return 1;
+          } else {
+              return 0;
+          }
+      });
+
+      return sortedByCategory;
+
     }
 
     showBoughtItems(...args) {
