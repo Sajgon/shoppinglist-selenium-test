@@ -40,7 +40,7 @@ module.exports = class GroceryList {
     }
 
     buy(itemName) {
-        // markera vara som köpta
+
 		let item = {};
 
 		// Finn item med korrekt namn
@@ -59,9 +59,10 @@ module.exports = class GroceryList {
 
     sortAlphabetical() {
 
-        // sortera listor i bokstavsordning.
+        // Gotcha. Need to create a copy of the items list,
+        // otherwise this.items will be sorted
 
-        let sorted = this.items.sort((a,b) => {
+        let sorted = this.items.slice().sort((a,b) => {
             if(a.name < b.name) {
                 return -1;
             } else if (a.name > b.name) {
@@ -76,7 +77,7 @@ module.exports = class GroceryList {
     }
 
     sortByCategory() {
-      // sortera listor efter kategori.
+      // sort lists by category
     }
 
     showBoughtItems(...args) {

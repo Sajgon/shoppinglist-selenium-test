@@ -1,3 +1,5 @@
+process.on('unhandledRejection', r => console.log(r));
+
 // Import the GroceryListTest class
 let GroceryList = require('./grocery-list');
 let GroceryListItem = require('./grocery-list-item');
@@ -10,7 +12,7 @@ var randomItemCategory = itemCategories[Math.floor(itemCategories.length*Math.ra
 
 // Ola Test
 let a = new GroceryList('Första Listan');
-a.addItem('Punk IPA', 1, 'Mat',);
+a.addItem('Beer', 1, 'Mat',);
 a.addItem('Plommon', 120, 'Mat');
 a.addItem('Väska', 120, 'Stuff');
 a.addItem('Lingon', 120, 'Mat');
@@ -18,12 +20,9 @@ a.addItem('Abba', 1, 'Stuff');
 a.addItem('Saab', 1, 'Stuff');
 a.removeItem('Plommon');
 
-a.sortAlphabetical();
+// a.sortAlphabetical();
 
-console.log(a);
+// console.log('***sorted', a.sortAlphabetical());
+// console.log('***NOT sorted', a.items);
 
-
-
-//a.addItem('Päron', 'Frukt', 4);
-//a.addItem('Is', randomItemCategory, 5);
-
+// process.on('unhandledRejection', r => console.log(r));
