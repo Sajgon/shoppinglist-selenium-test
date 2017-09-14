@@ -14,9 +14,6 @@ module.exports = class GroceryList {
 
     addItem(name, quantity, category) {
 
-        // lägga till matvaror i sin shoppinglista.
-        // namn, kvantitet och kategori (Grönsaker, Frukt etc), samt bought = false
-
         this.items.forEach(function(item){
             if(item.name == name){
                 throw new Error("There's already an item with that name.");
