@@ -6,7 +6,7 @@ defineSupportCode(function({Given, When, Then}) {
 
     let TestList = new GroceryList('A Listan');
 
-    Given('that I have a grocery list with items', function () {
+    Given('that I have a grocery list with items that has a name', function () {
 
         TestList.addItem('Plommon', 10, 'Mat');
         TestList.addItem('Banan', 200, 'Mat');
@@ -20,7 +20,7 @@ defineSupportCode(function({Given, When, Then}) {
         assert.doesNotThrow(() => TestList.sortAlphabetical());
     });
 
-    Then('the function should sort items in alphabetical order', function () {
+    Then('the function should sort items by name in alphabetical order', function () {
 
         let sortedList = TestList.items.slice().sort((a,b) => {
             if(a.name < b.name) {
@@ -32,10 +32,7 @@ defineSupportCode(function({Given, When, Then}) {
             }
         });
 
-        // console.log(TestList.items);
-        // console.log(sortedList)
-
-        assert(TestList.items !== sortedList)
+        assert.deepEqual(TestList.sortAlphabetical(), sortedList);
 
     });
 });
