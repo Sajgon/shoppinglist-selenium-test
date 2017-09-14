@@ -10,6 +10,7 @@ defineSupportCode(function({Given, When, Then}) {
     TestList.addItem("potatis", 3, "rotfrukt");
     TestList.addItem("banan", 2, "frukt");
     TestList.buy("banan");
+    TestList.buy("potatis")
     //Banan köps så den syns i exemplet
 
     Given('that I have a grocery list with bought items', function() {
@@ -21,6 +22,8 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     Then('a list with only the bought items will appear', function() {
-        assert.doesNotThrow(()=> boughtItems);
+        boughtItems.forEach(function(item){
+            assert(item.bought);
+        })
     });
 });
