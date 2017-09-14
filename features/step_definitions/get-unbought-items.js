@@ -6,7 +6,7 @@ defineSupportCode(function({Given, When, Then}) {
     
     let name = "My Grocery List";
     let TestList = new GroceryList(name);
-    let boughtItems = [];
+    let unboughtItems = [];
     TestList.addItem("potatis", 3, "rotfrukt");
     TestList.addItem("banan", 2, "frukt");
     TestList.buy("banan");
@@ -17,10 +17,12 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     When('I click on a get unbought items button', function() {
-        boughtItems = TestList.filterUnboughtItems();
+        unboughtItems = TestList.filterUnboughtItems();
     });
 
     Then('a list with only the unbought items will appear', function() {
-        assert.doesNotThrow(()=> boughtItems);
+        unboughtItems.forEach(function(item){
+            assert(item.bought == false);
+        })
     });
 });
