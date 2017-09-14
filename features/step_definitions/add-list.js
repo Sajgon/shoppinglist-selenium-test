@@ -27,7 +27,6 @@ defineSupportCode(function({Given, When, Then}) {
 
     //Trying to add list with out a name
     When('I choose to create a list without a name', function() {
-        TestList = new GroceryList();
         assert.throws(()=>TestListWithoutName = new GroceryList());
     });
     
