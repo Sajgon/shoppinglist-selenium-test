@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WU Shopping List</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>WU Shopping List</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- Fake Module -->
-    <script src="fake-module.js"></script>
-    <!-- Our classes -->
-    <script src="grocery-list-item.js"></script>
-    <script src="grocery-list.js"></script>
-  </head>
-  <body>
-    <h1>Shop it!</h1>
+        <!-- Fake Module -->
+        <script src="fake-module.js"></script>
+        <!-- Our classes -->
+        <script src="grocery-list-item.js"></script>
+        <script src="grocery-list.js"></script>
+        <script src="kick-it.js"></script>
+    </head>
 
-  </body>
+    <body>
+        <h1>Shop it!</h1>
+        <form>
+            New item:<input type="text" id="addtask">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="list">
+            <h2>Grocery List:</h2>
+            <ul class="unbought">
+            </ul>
+        </div>
+        <div class="list">
+            <h2>Bought:</h2>
+            <ul class="bought">
+            </ul>
+        </div>
+    </body>
 </html>
+
