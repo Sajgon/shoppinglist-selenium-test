@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cucumber": "cucumber-js & exit 0",
     "only": "cucumber-js features/remove-item.feature & exit 0",
-    "pelle": "cucumber-js features/add-item.feature & exit 0",
+    "pelle": "cucumber-js features/add-list.feature & exit 0",
     "ola": "cucumber-js features/sort-alphabetical.feature & exit 0"
   },
   "author": "Pelle, Anton, Ola",
