@@ -1,6 +1,6 @@
 Feature: Get bought items from a grocery list.
     As a shopper 
-    I should be able to view items that is already bought from a grocery list.
+    I should be able to view items that are already bought from a grocery list.
 
     Scenario: View bought items from a grocery list
         Given that I have a grocery list with bought items

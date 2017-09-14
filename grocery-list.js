@@ -92,6 +92,7 @@ module.exports = class GroceryList {
         let filteredArray = this.items.filter((item) => {
             return item.bought === true;
         });
+        return filteredArray;
 	}
 
 	filterUnboughtItems(){
@@ -99,6 +100,7 @@ module.exports = class GroceryList {
 		let filteredArray = this.items.filter((item) => {
             return item.bought === false;
         });
+        return filteredArray;
 	}
 
 }
