@@ -59,27 +59,30 @@ module.exports = class GroceryList {
 		return false;
     }
 
-    sortAlphabetical() {
+    sortAlphabetical(arg) {
 
-        // Gotcha. Need to create a copy of the items list,
-        // otherwise this.items will be sorted
+        // calling the function with an true or false arg
+        // true = ascending, false = reversed
 
-        let sorted = this.items.slice().sort((a,b) => {
-            if(a.name < b.name) {
-                return -1;
-            } else if (a.name > b.name) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        if (typeof arg !== "boolean") {
+            throw new Error("An boolean argument need to be passed");
+        }
 
-        return sorted;
+        let sortedByName;
+        let x = this.items.slice();
 
+        if (arg) {
+            sortedByName = x.sort((a, b) => a.name > b.name);
+        } else {
+            sortedByName = x.sort((a, b) => a.name < b.name);
+        }
+
+        return sortedByName;
     }
 
     sortByCategory() {
-      // sort lists by category
+        let sortedByCategory = this.items.slice().sort((a, b) => a.category > b.category);
+        return sortedByCategory;
     }
 
 	filterBoughtItems(){
