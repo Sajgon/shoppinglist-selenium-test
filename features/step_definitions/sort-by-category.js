@@ -8,12 +8,14 @@ defineSupportCode(function({Given, When, Then}) {
 
     Given('that I have a grocery list with items that has a category', function () {
 
-        TestList.addItem('Beer', 1, 'Öl',);
-        TestList.addItem('Plommon', 120, 'Mat');
-        TestList.addItem('Väska', 120, 'Stuff');
-        TestList.addItem('Lingon', 120, 'Mat');
-        TestList.addItem('Abba', 1, 'Stuff');
-        TestList.addItem('Saab', 1, 'Stuff');
+        let newItemsToAdd = [
+            { name: 'Candy', qt: 2, cat: 'Food' },
+            { name: 'Müsli', qt: 3, cat: 'Food' },
+            { name: 'Candles', qt: 20, cat: 'Mood' },
+            { name: 'Tesla', qt: 1, cat: 'Car' }
+        ];
+
+        newItemsToAdd.map((x) => TestList.addItem(x.name, x.qt, x.cat));
 
         assert.ok(TestList instanceof GroceryList);
     });

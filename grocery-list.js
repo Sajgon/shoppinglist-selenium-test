@@ -14,8 +14,8 @@ module.exports = class GroceryList {
 
     addItem(name, quantity, category) {
 
-        this.items.forEach(function(item){
-            if(item.name == name){
+        this.items.forEach(function(item) {
+            if (item.name == name) {
                 throw new Error("There's already an item with that name.");
             }
         });
@@ -38,79 +38,62 @@ module.exports = class GroceryList {
 
     buy(itemName) {
 
-		let item = {};
+        let item = {};
 
-		// Finn item med korrekt namn
-		for(var i = 0; i < this.items.length; i++){
-			if(this.items[i].name === itemName){
-				// Varan är nu köpt
-				this.items[i].bought = true;
-				item = this.items[i];
-				break;
-			}
-		}
+        // Finn item med korrekt namn
+        for (var i = 0; i < this.items.length; i++) {
+            if (this.items[i].name === itemName) {
+                // Varan är nu köpt
+                this.items[i].bought = true;
+                item = this.items[i];
+                break;
+            }
+        }
 
-		if(item){return true;}
-		return false;
+        if (item) { return true; }
+        return false;
     }
 
-    sortAlphabetical() {
+    sortAlphabetical(arg) {
 
-        // Gotcha. Need to create a copy of the items list,
-        // otherwise this.items will be sorted
+        // calling the function with an true or false arg
+        // true = ascending, false = reversed
 
-        let sortedByName = this.items.slice().sort((a,b) => {
-            if(a.name < b.name) {
-                return -1;
-            } else if (a.name > b.name) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        if (typeof arg !== "boolean") {
+            throw new Error("An boolean argument need to be passed");
+        }
+
+        let sortedByName;
+        let x = this.items.slice();
+
+        if (arg) {
+            sortedByName = x.sort((a, b) => a.name > b.name);
+        } else {
+            sortedByName = x.sort((a, b) => a.name < b.name);
+        }
 
         return sortedByName;
-
     }
 
     sortByCategory() {
-
-      let sortedByCategory = this.items.slice().sort((a,b) => {
-          if(a.category < b.category) {
-              return -1;
-          } else if (a.category > b.category) {
-              return 1;
-          } else {
-              return 0;
-          }
-      });
-
-      return sortedByCategory;
-
+        let sortedByCategory = this.items.slice().sort((a, b) => a.category > b.category);
+        return sortedByCategory;
     }
 
-    showBoughtItems(...args) {
-      // bara kunna visa köpta varor.
-    }
-
-    showUnboughtItems(...args) {
-      // bara kunna visa oköpta varor.
-    }
-
-	filterBoughtItems(){
-		// Visa endast köpta varor
+    filterBoughtItems() {
+        // Visa endast köpta varor
         let filteredArray = this.items.filter((item) => {
             return item.bought === true;
         });
         return filteredArray;
-	}
+    }
 
-	filterUnboughtItems(){
-		// Visa endast oköpta varor
-		let filteredArray = this.items.filter((item) => {
+    filterUnboughtItems() {
+        // Visa endast oköpta varor
+        let filteredArray = this.items.filter((item) => {
             return item.bought === false;
         });
         return filteredArray;
-	}
+    }
 
 }
