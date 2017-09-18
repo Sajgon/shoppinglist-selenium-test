@@ -4,6 +4,9 @@ wuma16-testning-shoppinglist
 # Beskrivning
 En shoppinglistapplikation för varor med använding av BDD (Behavior Driven Development) och TDD (Test Driven Development).
 
+# Intruktioner
+Kör backendtestet i Node.js med kommandot "npm run cucumber".
+
 # Uppgiftskrav
 https://suw16-lernia.nodehill.se/testning-av-applikationer-kursplan/
 
@@ -16,5 +19,5 @@ Webbutvecklare Javascript YHWUMA16, Lernia Yrkeshögskola
 # Datum
 2017-09-20
 
-Gruppdeltagare
-# David Böttiger, Ola Frick, Pelle Härdstedt, Anton Johansson
+# Gruppdeltagare
+David Böttiger, Ola Frick, Pelle Härdstedt, Anton Johansson

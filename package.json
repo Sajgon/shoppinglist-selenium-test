@@ -11,7 +11,7 @@
     "david": "cucumber-js features/get-bought-items.feature & exit 0",
     "anton": "cucumber-js features/get-unbought-items.feature & exit 0"
   },
-  "author": "Pelle, Anton, Ola",
+  "author": "Pelle Härdstedt, Anton Johansson, Ola Frick, David Böttiger",
   "license": "MIT",
   "dependencies": {
     "cucumber": "^2.0.0-rc.9"
