@@ -4,16 +4,17 @@ class AppGui {
     constructor(){
 
         //start with all views hidden
-        $('view').hide()
+
+
+        $('.master-view').show()
+        $('.detail-view').hide()
         //show start view
-        $('start-view').show();
+        // $('master-view').show();
         this.defineEventListeners();
         this.printList(myGroceryList.items);
     }
 
-    //put all event listeners here
     defineEventListeners(){
-
         let that = this;
 
         //add list
@@ -22,6 +23,10 @@ class AppGui {
         });
 
         //buy item
+        $(document).on('click','#addItem',function(){
+            console.log(this)
+        });
+
         $(document).on('click', '#buyItem', function(){
 
         });
@@ -39,7 +44,6 @@ class AppGui {
 
         });
     }
-
     printList(arr){
         $('.list').empty();
         arr.forEach(function(item){
@@ -56,3 +60,7 @@ myGroceryList.addItem("bacon", 2, "kött");
 myGroceryList.addItem("korv", 2, "kött");
 
 new AppGui();
+
+}
+
+$(()=>new AppGui());
