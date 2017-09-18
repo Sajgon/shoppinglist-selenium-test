@@ -5,7 +5,6 @@ class AppGui {
 
         //start with all views hidden
 
-
         $('.master-view').show()
         $('.detail-view').hide()
         //show start view
@@ -52,15 +51,11 @@ class AppGui {
     };
 }
 
-let myGroceryList = new GroceryList("My Grocery List")
-myGroceryList.addItem("Fuktboll", 2, "övrigt");
-myGroceryList.addItem("Tomat", 3, "grönsak");
-myGroceryList.addItem("Äpple", 2, "frukt");
-myGroceryList.addItem("bacon", 2, "kött");
-myGroceryList.addItem("korv", 2, "kött");
-
-new AppGui();
-
-}
+// let myGroceryList = new GroceryList("My Grocery List")
+// myGroceryList.addItem("Fuktboll", 2, "övrigt");
+// myGroceryList.addItem("Tomat", 3, "grönsak");
+// myGroceryList.addItem("Äpple", 2, "frukt");
+// myGroceryList.addItem("bacon", 2, "kött");
+// myGroceryList.addItem("korv", 2, "kött");
 
 $(()=>new AppGui());
