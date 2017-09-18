@@ -2,51 +2,57 @@ let GroceryList = require('./grocery-list');
 
 class AppGui {
 
-  constructor() {
-    //start with all views hidden
+    constructor() {
+        //start with all views hidden
 
-    $('.master-view').hide();
-    $('.detail-view').show();
+        $('.master-view').show()
+        $('.detail-view').hide()
 
-    this.defineEventListeners();
-    this.addItemForm();
-  }
+        this.defineEventListeners();
+        this.addItemForm();
 
-  defineEventListeners() {
-    $(document).on('click', '#addList', function() {
-      //click it
-    });
+    }
 
-    $(document).on('click', '#addItem', function() {
-      // console.log(this)
-    });
+    defineEventListeners() {
+        let that = this;
 
-    $(document).on('click', '#buyItem', function() {
+        //add list
+        $(document).on('click', '#addList', function() {
+            //click it
+        });
 
-    })
+        //buy item
+        $(document).on('click', '#addItem', function() {
+            console.log(this)
+        });
 
-    $(document).on('click', '#removeItem', function() {
 
-    })
+        $(document).on('click', '#buyItem', function() {
 
-  }
+        })
 
-  addItemForm() {
+        $(document).on('click', '#removeItem', function() {
 
-    $('#new-item-form').submit(function(e) {
+        })
 
-      let name = $('.item-form-name').val();
-      let qty = $('.item-form-qty').val();
-      let category = $('.item-form-category').val();
+    }
 
-      // TODO: find out a way to add item to THIS list.
-      // ??? new GroceryListItem(name, qty, category);
+    addItemForm() {
 
-      console.log(name, qty, category);
-      $('#new-item-form').clear();
-      e.preventDefault();
-    });
-  }
+        $('#new-item-form').submit(function(e) {
+
+            let name = $('.item-form-name').val();
+            let qty = $('.item-form-qty').val();
+            let category = $('.item-form-category').val();
+
+            // TODO: find out a way to add item to THIS list.
+            // ??? new GroceryListItem(name, qty, category);
+
+            console.log(name, qty, category);
+            $('#new-item-form').clear();
+            e.preventDefault();
+        });
+    }
 }
 
 $(() => new AppGui());

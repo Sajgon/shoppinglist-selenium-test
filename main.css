@@ -1,0 +1,27 @@
+
+
+.rowLine{
+	margin-top: 10px;
+}
+
+.new-list-input{
+	height: 30px;
+}
+
+.new-list-btn{
+	background-color: #007aff;
+	border: none;
+    border-color: grey;
+	height: 30px;
+}
+.new-list-btn:hover{
+	opacity: 0.9;
+}
+
+.master-list-view > button{
+	background-color: #5ac8fa;
+	border-color: white;
+}
+.master-list-view > button:hover{
+	background-color: #5ac8fa;
+}
