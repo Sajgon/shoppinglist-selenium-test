@@ -6,10 +6,9 @@ process.on('unhandledRejection', r => console.log(r));
 
 
 // Tillåtna kategorier [Not in use]
-// var itemCategories = ["Frukt", "Grönsak", "Kött", "Mejeriprodukt", "Krydda", "Övrigt"];
+let itemCategories = ["Frukt", "Grönsak", "Kött", "Mejeriprodukt", "Krydda", "Övrigt", "Dryck", "Bröd & Bageri", "Fisk & Skaldjur", "Glass & Godis", "Hem & Hushåll"];
 // En random tillåten kategori
 // var randomItemCategory = itemCategories[Math.floor(itemCategories.length*Math.random())];
-
 
 let a = new GroceryList('Första Listan');
 
