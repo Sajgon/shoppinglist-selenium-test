@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>WUMA16 shop it</title>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    
-	<!-- Fake Module -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Fake Module -->
     <script src="fake-module.js"></script>
     <!-- Our classes -->
     <script src="grocery-list-item.js"></script>
     <script src="grocery-list.js"></script>
     <script src="app-gui.js"></script>
 </head>
+
 <body>
-
-	<div class="master-view">
-		<h1>HÄR ÄR MASTER VIEW</h1>
-		
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-offset-2 col-xs-6" style="background-color: red;"> </div> 
-			</div>
-		</div>
-
-	</div>
-
-	<div class="detail-view">
-		<h1>HÄR ÄR DETAIL VIEW</h1>
-	</div>
-
-
-	
-
+    <div class="master-view">
+        <h1>HÄR ÄR MASTER VIEW</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-offset-2 col-xs-6" style="background-color: red;"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-view">
+        <h1>HÄR ÄR DETAIL VIEW</h1>
+        <!-- NEW ITEM INPUT FORM -->
+        <form id="new-item-form">
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control item-form-name" placeholder="Namn:" required>
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control item-form-qty" placeholder="Antal:" required>
+                </div>
+                <div class="col-sm-2">
+                    <select class="form-control item-form-category">
+                        <option>Elektronik</option>
+                        <option>Hygien</option>
+                        <option>Kläder</option>
+                        <option>Mat</option>
+                        <option>Övrigt</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
