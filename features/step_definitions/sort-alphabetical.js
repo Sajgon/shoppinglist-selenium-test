@@ -1,42 +1,39 @@
 let assert = require('assert');
-let {defineSupportCode} = require('cucumber');
+let { defineSupportCode } = require('cucumber');
 let GroceryList = require('../../grocery-list.js');
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({ Given, When, Then }) {
 
     let TestList = new GroceryList('A Listan');
 
-    Given('that I have a grocery list with items', function () {
+    Given('that I have a grocery list with items', function() {
 
-        TestList.addItem('Plommon', 10, 'Mat');
-        TestList.addItem('Banan', 200, 'Mat');
-        TestList.addItem('Abba', 1, 'Stuff');
-        TestList.addItem('Yxa', 1, 'Stuff');
+        let newItems = [
+            { name: 'Candy', qt: 2, cat: 'Food' },
+            { name: 'Müsli', qt: 3, cat: 'Food' },
+            { name: 'Candles', qt: 20, cat: 'Mood' },
+            { name: 'Tesla', qt: 1, cat: 'Car' }
+        ];
+
+        newItems.map((x) => TestList.addItem(x.name, x.qt, x.cat));
 
         assert.ok(TestList instanceof GroceryList);
     });
 
-    When('I click on a button in the listview', function () {
-        assert.doesNotThrow(() => TestList.sortAlphabetical());
+    When('I click on a button for sorting in the listview', function() {
+
+        assert.doesNotThrow(() =>
+            TestList.sortAlphabetical(true),
+            Error,
+            'The method sortAlphabetical() does not have an boolean in-argument');
     });
 
-    Then('the function should sort items in alphabetical order', function () {
+    Then('the function should sort items by name in ascending or reversed alphabetical order', function() {
 
-        let sortedList = TestList.items.slice().sort((a,b) => {
-            if(a.name < b.name) {
-                return -1;
-            } else if (a.name > b.name) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        let ascendingList = TestList.items.slice().sort((a, b) => a.name > b.name);
+        let reversedList = TestList.items.slice().sort((a, b) => a.name < b.name);
 
-        // console.log(TestList.items);
-        // console.log(sortedList)
-
-        assert(TestList.items !== sortedList)
-
+        assert.deepEqual(TestList.sortAlphabetical(true), ascendingList);
+        assert.deepEqual(TestList.sortAlphabetical(false), reversedList);
     });
 });
-
