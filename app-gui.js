@@ -10,7 +10,6 @@ class AppGui {
         //show start view
         // $('master-view').show();
         this.defineEventListeners();
-        this.printList(myGroceryList.items);
     }
 
     defineEventListeners(){
@@ -32,14 +31,11 @@ class AppGui {
 
         //add item
         $(document).on('click','#addItem',function(){
-            myGroceryList.addItem("Hola", 3, "kalas");
-            that.printList(myGroceryList.items);
+
         });
 
         //remove item
-
         $(document).on('click', '#removeItem', function(){
-            that.printList(myGroceryList.items);
 
         });
     }
@@ -50,12 +46,5 @@ class AppGui {
         })
     };
 }
-
-// let myGroceryList = new GroceryList("My Grocery List")
-// myGroceryList.addItem("Fuktboll", 2, "övrigt");
-// myGroceryList.addItem("Tomat", 3, "grönsak");
-// myGroceryList.addItem("Äpple", 2, "frukt");
-// myGroceryList.addItem("bacon", 2, "kött");
-// myGroceryList.addItem("korv", 2, "kött");
 
 $(()=>new AppGui());
