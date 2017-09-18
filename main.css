@@ -25,3 +25,12 @@
 .master-list-view > button:hover{
 	background-color: #5ac8fa;
 }
+thead{
+	background-color: black;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+tbody{
+
+	font-family: 'Open Sans', sans-serif;
+}
