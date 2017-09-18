@@ -1,5 +1,3 @@
-let GroceryList = require('./grocery-list');
-
 module.exports = class GroceryListItem {
 
     constructor(name, quantity, category) {
