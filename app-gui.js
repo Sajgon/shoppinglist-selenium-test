@@ -5,11 +5,11 @@ class AppGui {
     constructor() {
         //start with all views hidden
 
-        $('.master-view').show()
-        $('.detail-view').hide()
+        $('.master-view').show();
+        $('.detail-view').show();
 
         this.defineEventListeners();
-        this.addItemForm();
+        this.addItemHandler();
 
     }
 
@@ -37,7 +37,7 @@ class AppGui {
 
     }
 
-    addItemForm() {
+    addItemHandler() {
 
         $('#new-item-form').submit(function(e) {
 
