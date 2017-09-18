@@ -6,7 +6,7 @@ class AppGui {
         //start with all views hidden
 
 
-        $('.master-view').hide()
+        $('.master-view').show()
         $('.detail-view').hide()
         //show start view
         // $('master-view').show();
