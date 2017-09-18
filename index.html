@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>WUMA16 shop it</title>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="main.css"> 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    
+   
 	<!-- Fake Module -->
     <script src="fake-module.js"></script>
     <!-- Our classes -->
@@ -18,17 +18,16 @@
     <script src="grocery-list.js"></script>
     <script src="app-gui.js"></script>
 </head>
-<body>
 
+<body>
 	<div class="master-view">
-		<!-- HÄR ÄR MASTER VIEW</h1> -->
-		
+	<!-- HÄR ÄR MASTER VIEW</h1> -->
 		<div class="container-fluid">
 			<div class="row rowLine">
-				<div class="col-xs-offset-2 col-xs-8"> 
+				<div class="col-xs-offset-2 col-xs-8">
 					<input class="col-xs-5 new-list-input" type="text" name="listName" placeholder="Listnamn">
 					<button type="button" class="col-xs-2 col-xs-offset-1 new-list-btn">Skapa Ny Lista</button>
-				</div> 
+				</div>
 			</div>
 			<div class="row rowLine">
 				<div class="col-xs-offset-2 col-xs-8">
@@ -41,15 +40,42 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
 	</div>
 
 	<div class="detail-view">
 		<h1>HÄR ÄR DETAIL VIEW</h1>
+
 		<div class="container">
 			<div class="row">
+
+            <!-- NEW ITEM INPUT FORM -->
+            <form id="new-item-form">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control item-form-name" placeholder="Namn:" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control item-form-qty" placeholder="Antal:" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <select class="form-control item-form-category">
+                            <option>Elektronik</option>
+                            <option>Hygien</option>
+                            <option>Kläder</option>
+                            <option>Mat</option>
+                            <option>Övrigt</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+
 			<div class="panel panel-default">
 			  <!-- Default panel contents -->
 			  <div class="panel-heading">RUBRIK</div>
@@ -60,7 +86,7 @@
 			    <thead>
 			      <tr>
 				    <th>KÖPT</th>
-		   			<th>KATEGORI</th> 
+		   			<th>KATEGORI</th>
 		    		<th>NAMN:</th>
 		    		<th>ANTAL:</th>
 		    		<th>TA BORT</th>
@@ -81,9 +107,6 @@
 			</div>
 			</div>
 	</div>
-
-
-	
-
 </body>
+
 </html>

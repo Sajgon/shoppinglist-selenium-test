@@ -17,7 +17,7 @@ module.exports = {
         "strict": true,
         "trailing": true,
         "undef": true,
-        "unused": true
+        "unused": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

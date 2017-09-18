@@ -1,50 +1,58 @@
 let GroceryList = require('./grocery-list');
 
 class AppGui {
-    constructor(){
 
+    constructor() {
         //start with all views hidden
 
-        $('.master-view').show()
-        $('.detail-view').hide()
-        //show start view
-        // $('master-view').show();
+        $('.master-view').show();
+        $('.detail-view').show();
+
         this.defineEventListeners();
+        this.addItemHandler();
+
     }
 
-    defineEventListeners(){
+    defineEventListeners() {
         let that = this;
 
         //add list
-        $(document).on('click','#addList',function(){
+        $(document).on('click', '#addList', function() {
             //click it
         });
 
         //buy item
-        $(document).on('click','#addItem',function(){
+        $(document).on('click', '#addItem', function() {
             console.log(this)
         });
 
-        $(document).on('click', '#buyItem', function(){
 
-        });
+        $(document).on('click', '#buyItem', function() {
 
-        //add item
-        $(document).on('click','#addItem',function(){
+        })
 
-        });
+        $(document).on('click', '#removeItem', function() {
 
-        //remove item
-        $(document).on('click', '#removeItem', function(){
+        })
 
+    }
+
+    addItemHandler() {
+
+        $('#new-item-form').submit(function(e) {
+
+            let name = $('.item-form-name').val();
+            let qty = $('.item-form-qty').val();
+            let category = $('.item-form-category').val();
+
+            // TODO: find out a way to add item to THIS list.
+            // ??? new GroceryListItem(name, qty, category);
+
+            console.log(name, qty, category);
+            $('#new-item-form').clear();
+            e.preventDefault();
         });
     }
-    printList(arr){
-        $('.list').empty();
-        arr.forEach(function(item){
-            $('.list').append('<li>' + item.name + "</li>")
-        })
-    };
 }
 
-$(()=>new AppGui());
+$(() => new AppGui());
