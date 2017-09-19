@@ -62,9 +62,9 @@ class AppGui {
         });
     }
 
-    printList(){
-        let instances = GroceryList.allInstances;
-        let activeList = instances.find(instance => { return instance.active = true });
+    printList(){        
+        // let instances = GroceryList.allInstances;
+        // let activeList = instances.find(instance => { return instance.active = true });
     }
 }
 
