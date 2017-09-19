@@ -6,12 +6,10 @@ class AppGui {
         //start with all views hidden
 
         $('.master-view').show();
-        $('.detail-view').show();
+        $('.detail-view').hide();
 
         this.defineEventListeners();
         this.addItemHandler();
-        this.removeListHandler();
-
     }
 
     defineEventListeners() {
