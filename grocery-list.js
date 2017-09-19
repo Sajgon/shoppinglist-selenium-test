@@ -10,12 +10,17 @@ module.exports = class GroceryList {
 
         this.name = name;
         this.items = [];
-        this.active = false;
-
         // Add a static property if not already set
         GroceryList.allInstances = GroceryList.allInstances || [];
         // Push this to the static property allInstances
         GroceryList.allInstances.push(this);
+
+        //everytime a new list is created, set all lists .active to 'false'
+        GroceryList.allInstances.forEach(function(list){
+            list.active = false;
+        });
+        //and then set THIS list .active to 'true'
+        this.active = true;
     }
 
     addItem(name, quantity, category) {
@@ -101,5 +106,4 @@ module.exports = class GroceryList {
         });
         return filteredArray;
     }
-
 }

@@ -16,7 +16,8 @@ class AppGui {
         let that = this;
 
         //add list
-        $(document).on('click', '#addList', function() {
+        $(document).on('click', '#addList', function(e) {
+            e.preventDefault();
             //click it
 			let newListName = $('#listNameInput').val();
 			let newList = new GroceryList(newListName);
@@ -25,12 +26,15 @@ class AppGui {
 				console.log("Successfully created a new list!");
 				$('#newListSuccessAlert').show();
 				//console.log(GroceryList.allInstances);
+                $('.master-list-view').append("<button type='button' class='btn btn-default'><span style='float: left;'>" +
+                    newListName +
+                    "</span> <span class='glyphicon glyphicon-remove' style='float: right;'></span></button>");
 			}
         });
 
         //buy item
         $(document).on('click', '#addItem', function() {
-            console.log(this)
+
         });
 
 
@@ -44,30 +48,34 @@ class AppGui {
 
     }
 
+    static findActiveList(){
+        let instances = GroceryList.allInstances;
+        let activeList = instances.find(instance => { return instance.active == true });
+        return activeList;
+    }
+
     addItemHandler() {
 
         $('#new-item-form').submit(function(e) {
-
+            e.preventDefault();
             let name = $('.item-form-name').val();
             let qty = $('.item-form-qty').val();
             let category = $('.item-form-category').val();
-
-            // TODO: find out a way to add item to THIS list.
-            // ??? new GroceryListItem(name, qty, category);
-
+            
             console.log(name, qty, category);
+            let activeList = AppGui.findActiveList();
+            activeList.addItem(name, qty, category)
+            gui.printList();
+
             $('#new-item-form').clear();
-            e.preventDefault();
         });
     }
 
     printList(){        
-        // let instances = GroceryList.allInstances;
-        // let activeList = instances.find(instance => { return instance.active = true });
-        // console.log(activeList)
-        //     activeList.forEach(function(item){
-        //         console.log(item);
-        //     });
+        let activeList = AppGui.findActiveList();
+            activeList.items.forEach(function(item){
+                console.log(item);
+            });
     }
 }
 
