@@ -71,7 +71,8 @@ class AppGui {
         });
     }
 
-    static printList(){        
+    static printList(){
+        $('.unbought-items').empty();
         let activeList = AppGui.findActiveList();
             activeList.items.forEach(function(item){
                 $('.unbought-items').append("<tr><td><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
