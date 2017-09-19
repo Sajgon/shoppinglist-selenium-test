@@ -10,6 +10,7 @@ module.exports = class GroceryList {
 
         this.name = name;
         this.items = [];
+
         // Add a static property if not already set
         GroceryList.allInstances = GroceryList.allInstances || [];
         // Push this to the static property allInstances
@@ -66,7 +67,6 @@ module.exports = class GroceryList {
     }
 
     sortAlphabetical(arg) {
-
         // calling the function with an true or false arg
         // true = ascending, false = reversed
 
