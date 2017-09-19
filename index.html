@@ -24,9 +24,13 @@
 	<!-- HÄR ÄR MASTER VIEW</h1> -->
 		<div class="container-fluid">
 			<div class="row rowLine">
+				<div id="newListSuccessAlert" class="col-xs-offset-2 col-xs-8 alert alert-success" role="alert"><b>Grattis!</b> Du har skapat en ny shoppinglista! </div>
+			</div>
+			
+			<div class="row rowLine">
 				<div class="col-xs-offset-2 col-xs-8">
-					<input class="col-xs-5 new-list-input" type="text" name="listName" placeholder="Listnamn">
-					<button type="button" class="col-xs-2 col-xs-offset-1 new-list-btn">Skapa Ny Lista</button>
+					<input id="listNameInput" class="col-xs-5 new-list-input" type="text" name="listName" placeholder="Listnamn">
+					<button id="addList" type="button" class="col-xs-2 col-xs-offset-1 new-list-btn">Skapa Ny Lista</button>
 				</div>
 			</div>
 			<div class="row rowLine">
@@ -34,8 +38,8 @@
 					<h1>Dina Shopping Listor:</h1>
 					<div class="row">
 						<div class="btn-group-vertical col-xs-8 master-list-view" role="group">
+							
 						   <button type="button" class="btn btn-default"><span style="float: left;">Lista 1</span> <span class="glyphicon glyphicon-remove" style="float: right;"></span></button>
-						   <button type="button" class="btn btn-default"><span style="float: left;">Lista 2</span> <span class="glyphicon glyphicon-remove" style="float: right;"></span></button>
 						</div>
 					</div>
 				</div>
@@ -51,29 +55,29 @@
 		<div class="container">
 			<div class="row">
 
-            <!-- NEW ITEM INPUT FORM -->
-            <form id="new-item-form">
-                <div class="form-group row">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control item-form-name" placeholder="Namn:" required>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="number" class="form-control item-form-qty" placeholder="Antal:" required>
-                    </div>
-                    <div class="col-sm-2">
-                        <select class="form-control item-form-category">
-                            <option>Elektronik</option>
-                            <option>Hygien</option>
-                            <option>Kläder</option>
-                            <option>Mat</option>
-                            <option>Övrigt</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </form>
+				<!-- NEW ITEM INPUT FORM -->
+				<form id="new-item-form">
+					<div class="form-group row">
+						<div class="col-sm-6">
+							<input type="text" class="form-control item-form-name" placeholder="Namn:" required>
+						</div>
+						<div class="col-sm-2">
+							<input type="number" class="form-control item-form-qty" placeholder="Antal:" required>
+						</div>
+						<div class="col-sm-2">
+							<select class="form-control item-form-category">
+								<option>Elektronik</option>
+								<option>Hygien</option>
+								<option>Kläder</option>
+								<option>Mat</option>
+								<option>Övrigt</option>
+							</select>
+						</div>
+						<div class="col-sm-2">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</form>
 
 			<h2>LISTANS NAMN</h2>
 			<!-- Kategorisortering -->
@@ -83,38 +87,39 @@
             <button type="button" class="btn btn-secondary btn-xs">sortera efter namn <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
 		
 			<!-- Panel -->
-			<div class="panel panel-default row col-sm-11 nopadding">
-			  <!-- Default panel contents -->
-			 
-			  <!-- Table -->
-			  <div class="table-responsive">
-			  <table class="table table-bordered">
-			  	<!-- Tablehead -->
-			    <thead>
-			      <tr>
-				    <th class="thKopt" ">KÖPT</th>
-		   			<th class="thKategori">KATEGORI</th>
-		    		<th class="thNamn">NAMN</th>
-		    		<th class="thAntal">ANTAL</th>
-		    		<th class="thTaBort">TA BORT</th>
-			      </tr>
-			    </thead>
-			    <!-- Tablebody -->
-			    <tbody>
-			      <tr>
-			        <td><span style="color: #007AFF;" class="glyphicon glyphicon-ok"></span></td>
-			        <td>ELEKTRONIK</td>
-			        <td>FREESTYLE</td>
-			        <td>3</td>
-			        <td><span class="glyphicon glyphicon-remove"></span></td>
-			      </tr>
-			    </tbody>
-			  </table>
+				<div class="panel panel-default row col-sm-11 nopadding">
+				  <!-- Default panel contents -->
+				 
+				  <!-- Table -->
+					  <div class="table-responsive">
+					  <table class="table table-bordered">
+					  	<!-- Tablehead -->
+					    <thead>
+					      <tr>
+						    <th class="thKopt" ">KÖPT</th>
+				   			<th class="thKategori">KATEGORI</th>
+				    		<th class="thNamn">NAMN</th>
+				    		<th class="thAntal">ANTAL</th>
+				    		<th class="thTaBort">TA BORT</th>
+					      </tr>
+					    </thead>
+					    <!-- Tablebody -->
+					    <tbody>
+					      <tr>
+					        <td><span style="color: #007AFF;" class="glyphicon glyphicon-ok"></span></td>
+					        <td>ELEKTRONIK</td>
+					        <td>FREESTYLE</td>
+					        <td>3</td>
+					        <td><span class="glyphicon glyphicon-remove"></span></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					</div>
+				</div>
 			</div>
 			</div>
-			</div>
-			</div>
+		</div>
 	</div>
+	
 </body>
-
 </html>

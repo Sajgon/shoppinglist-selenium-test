@@ -1,4 +1,7 @@
 
+#newListSuccessAlert{
+	display: none;
+}
 
 .rowLine{
 	margin-top: 10px;
