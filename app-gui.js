@@ -6,7 +6,7 @@ class AppGui {
         //start with all views hidden
 
         $('.master-view').show();
-        $('.detail-view').hide();
+        $('.detail-view').show();
 
         this.defineEventListeners();
         this.addItemHandler();
@@ -24,8 +24,7 @@ class AppGui {
 			if(newList.name == newListName){
 				// New list was created, notify user that
 				console.log("Successfully created a new list!");
-				$('#newListSuccessAlert').show();
-				//console.log(GroceryList.allInstances);
+				$('#newListSuccessAlert').show().delay(1000).fadeOut(600);
                 $('.master-list-view').append("<button type='button' class='btn btn-default list-button'><span style='float: left;'>" +
                     newListName +
                     "</span> <span class='glyphicon glyphicon-remove remove-list' style='float: right;'></span></button>");
