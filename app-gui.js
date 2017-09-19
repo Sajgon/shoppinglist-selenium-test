@@ -24,6 +24,7 @@ class AppGui {
 			if(newList.name == newListName){
 				// New list was created, notify user that
 				console.log("Successfully created a new list!");
+				$('#newListSuccessAlert').show();
 				//console.log(GroceryList.allInstances);
 			}
         });
