@@ -1,3 +1,4 @@
+let GroceryList = require('./grocery-list');
 
 class AppGui {
 
@@ -9,8 +10,6 @@ class AppGui {
 
         this.defineEventListeners();
         this.addItemHandler();
-        this.printList();
-
     }
 
     defineEventListeners() {
@@ -65,7 +64,11 @@ class AppGui {
     printList(){        
         // let instances = GroceryList.allInstances;
         // let activeList = instances.find(instance => { return instance.active = true });
+        // console.log(activeList)
+        //     activeList.forEach(function(item){
+        //         console.log(item);
+        //     });
     }
 }
 
-$(() => gui  = new AppGui());
+$(() => gui = new AppGui());
