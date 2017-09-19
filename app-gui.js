@@ -19,6 +19,13 @@ class AppGui {
         //add list
         $(document).on('click', '#addList', function() {
             //click it
+			let newListName = $('#listNameInput').val();
+			let newList = new GroceryList(newListName);
+			if(newList.name == newListName){
+				// New list was created, notify user that
+				console.log("Successfully created a new list!");
+				//console.log(GroceryList.allInstances);
+			}
         });
 
         //buy item
