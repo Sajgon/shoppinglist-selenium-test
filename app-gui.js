@@ -65,16 +65,22 @@ class AppGui {
             console.log(name, qty, category);
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)
-            gui.printList();
+            AppGui.printList();
 
             $('#new-item-form').clear();
         });
     }
 
-    printList(){        
+    static printList(){        
         let activeList = AppGui.findActiveList();
             activeList.items.forEach(function(item){
-                console.log(item);
+                $('.unbought-items').append("<tr><td><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
+                    item.category +
+                    "</td><td>" +
+                    item.name +
+                    "</td><td>" +
+                    item.quantity +
+                    "</td><td><span class='glyphicon glyphicon-remove'></span></td></tr>");
             });
     }
 }
