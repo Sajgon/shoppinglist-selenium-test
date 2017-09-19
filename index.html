@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link rel="stylesheet" href="main.css"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 
-   
+
 	<!-- Fake Module -->
     <script src="fake-module.js"></script>
     <!-- Our classes -->
@@ -20,24 +20,38 @@
 </head>
 
 <body>
+
+	<div class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 header-container"><h1>Shoppinglist</h1></div>
+			</div>
+		</div>
+	</div>
+
 	<div class="master-view">
 	<!-- HÄR ÄR MASTER VIEW</h1> -->
-		<div class="container-fluid">
-			<div class="row rowLine">
-				<div id="newListSuccessAlert" class="col-xs-offset-2 col-xs-8 alert alert-success" role="alert"><b>Grattis!</b> Du har skapat en ny shoppinglista! </div>
+		<div class="container">
+
+			<div class="row mg-top-10px">
+				<div id="newListSuccessAlert" class="col-xs-8 alert alert-success" role="alert"><b>Grattis!</b> Du har skapat en ny shoppinglista! </div>
 			</div>
-			
 			<div class="row rowLine">
 				<div class="col-xs-offset-2 col-xs-8">
+
+			<div class="row mg-top-10px">
+				<div class="col-xs-8">
+
 					<input id="listNameInput" class="col-xs-5 new-list-input" type="text" name="listName" placeholder="Listnamn">
-					<button id="addList" type="button" class="col-xs-2 col-xs-offset-1 new-list-btn">Skapa Ny Lista</button>
+					<button id="addList" type="button" class="col-xs-offset-1 new-list-btn">Skapa Ny Lista</button>
 				</div>
 			</div>
-			<div class="row rowLine">
-				<div class="col-xs-offset-2 col-xs-8">
+			<div class="row mg-top-10px">
+				<div class="col-xs-8">
 					<h1>Dina Shopping Listor:</h1>
 					<div class="row">
 						<div class="btn-group-vertical col-xs-8 master-list-view" role="group">
+							<!-- Här inne läggs listorna till -->
 						</div>
 					</div>
 				</div>
@@ -48,8 +62,6 @@
 	</div>
 
 	<div class="detail-view">
-		<h1>HÄR ÄR DETAIL VIEW</h1>
-
 		<div class="container">
 			<div class="row">
 
@@ -83,11 +95,10 @@
 
 			<!-- Namnsortering -->
             <button type="button" id="sort-alphabetical"class="btn btn-secondary btn-xs">sortera efter namn <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
-		
 			<!-- Panel -->
 				<div class="panel panel-default row col-sm-11 nopadding">
 				  <!-- Default panel contents -->
-				 
+
 				  <!-- Table -->
 					  <div class="table-responsive">
 					  <table class="table table-bordered">
@@ -112,6 +123,6 @@
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>

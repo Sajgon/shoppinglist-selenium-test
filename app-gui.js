@@ -24,12 +24,18 @@ class AppGui {
 			if(newList.name == newListName){
 				// New list was created, notify user that
 				console.log("Successfully created a new list!");
-				$('#newListSuccessAlert').show();
-				//console.log(GroceryList.allInstances);
-                $('.master-list-view').append("<button type='button' class='btn btn-default'><span style='float: left;'>" +
+				$('#newListSuccessAlert').show().delay(1000).fadeOut(600);
+                $('.master-list-view').append("<button type='button' class='btn btn-default list-button'><span style='float: left;'>" +
                     newListName +
-                    "</span> <span class='glyphicon glyphicon-remove' style='float: right;'></span></button>");
-			}
+                    "</span> <span class='glyphicon glyphicon-remove remove-list' style='float: right;'></span></button>");
+    			}
+
+        });
+
+        //remove item *** Only frontend, removieList need to be written
+        $(document).on('click', '.remove-list', function(e) {
+            e.preventDefault();
+            $(this).parents('button').fadeOut(800);
         });
 
         $(document).on('click', '#sort-alphabetical', function(){
@@ -74,6 +80,7 @@ class AppGui {
             return instance.active == true
         });
         return activeList;
+
     }
 
     addItemHandler() {
@@ -83,7 +90,7 @@ class AppGui {
             let name = $('.item-form-name').val();
             let qty = $('.item-form-qty').val();
             let category = $('.item-form-category').val();
-            
+
             console.log(name, qty, category);
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)

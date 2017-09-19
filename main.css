@@ -1,9 +1,18 @@
 
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.header-container{
+	background-color: #212121;
+	color: #F7F7F7;
+}
+
 #newListSuccessAlert{
 	display: none;
 }
 
-.rowLine{
+.mg-top-10px{
 	margin-top: 10px;
 }
 
@@ -31,8 +40,6 @@
 thead{
 	background-color: #212121;
 	color: white;
-	font-family: 'Open Sans', sans-serif;
-	
 }
 th{
   height:70px;
@@ -43,10 +50,7 @@ td{
   vertical-align: middle !important;
   text-align: center;
 }
-tbody{
 
-	font-family: 'Open Sans', sans-serif;
-}
 .nopadding{
     padding: 0 !important;
     margin: 0 !important;
