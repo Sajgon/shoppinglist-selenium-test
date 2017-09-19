@@ -8,7 +8,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="main.css"> 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 
    
 	<!-- Fake Module -->
@@ -75,30 +75,38 @@
                 </div>
             </form>
 
+			<h2>LISTANS NAMN</h2>
+			<!-- Kategorisortering -->
+			<button type="button" class="btn btn-secondary btn-xs">sortera efter kategori <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
 
-			<div class="panel panel-default">
+			<!-- Namnsortering -->
+            <button type="button" class="btn btn-secondary btn-xs">sortera efter namn <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
+		
+			<!-- Panel -->
+			<div class="panel panel-default row col-sm-11 nopadding">
 			  <!-- Default panel contents -->
-			  <div class="panel-heading">RUBRIK</div>
-
+			 
 			  <!-- Table -->
 			  <div class="table-responsive">
 			  <table class="table table-bordered">
+			  	<!-- Tablehead -->
 			    <thead>
 			      <tr>
-				    <th>KÖPT</th>
-		   			<th>KATEGORI</th>
-		    		<th>NAMN:</th>
-		    		<th>ANTAL:</th>
-		    		<th>TA BORT</th>
+				    <th class="thKopt" ">KÖPT</th>
+		   			<th class="thKategori">KATEGORI</th>
+		    		<th class="thNamn">NAMN</th>
+		    		<th class="thAntal">ANTAL</th>
+		    		<th class="thTaBort">TA BORT</th>
 			      </tr>
 			    </thead>
+			    <!-- Tablebody -->
 			    <tbody>
 			      <tr>
-			        <td class="tdKopt"><span style="color: #007AFF;;" class="glyphicon glyphicon-ok"></span></td>
-			        <td class="tdKategori">KATEGORI</td>
-			        <td class="tdNamn">NAMN</td>
-			        <td class="tdAntal">ANTAL</td>
-			        <td class="tdTaBort"><span class="glyphicon glyphicon-remove"></span></td>
+			        <td><span style="color: #007AFF;" class="glyphicon glyphicon-ok"></span></td>
+			        <td>ELEKTRONIK</td>
+			        <td>FREESTYLE</td>
+			        <td>3</td>
+			        <td><span class="glyphicon glyphicon-remove"></span></td>
 			      </tr>
 			    </tbody>
 			  </table>

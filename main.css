@@ -26,11 +26,50 @@
 	background-color: #5ac8fa;
 }
 thead{
-	background-color: black;
+	background-color: #212121;
 	color: white;
 	font-family: 'Open Sans', sans-serif;
+	
+}
+th{
+  height:70px;
+  vertical-align: middle !important;
+}
+td{
+  height:70px;
+  vertical-align: middle !important;
+  text-align: center;
 }
 tbody{
 
 	font-family: 'Open Sans', sans-serif;
+}
+.nopadding{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.thKopt{
+	text-align: center;
+	width: 5%;
+}
+.thKategori{
+	width: 10%;
+	text-align: center;
+}
+.thNamn{
+	width: 40%;
+	text-align: center;
+}
+.thAntal{
+	width: 10%;
+	text-align: center;
+}
+.thTaBort{
+	width: 8%;
+	text-align: center;
+}
+.btn-secondary{
+	margin: 2px 0px 10px 1px;
+	background-color: #f7f7f7;
+	border-radius: 25px;
 }
