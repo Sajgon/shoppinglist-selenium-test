@@ -10,6 +10,12 @@ module.exports = class GroceryList {
 
         this.name = name;
         this.items = [];
+        this.active = false;
+
+        // Add a static property if not already set
+        GroceryList.allInstances = GroceryList.allInstances || [];
+        // Push this to the static property allInstances
+        GroceryList.allInstances.push(this);
     }
 
     addItem(name, quantity, category) {
