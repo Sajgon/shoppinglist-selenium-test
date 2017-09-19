@@ -32,11 +32,31 @@ class AppGui {
 			}
         });
 
+        $(document).on('click', '#sort-alphabetical', function(){
+
+            //find the active list
+            let activeList = AppGui.findActiveList();
+            //A-Z
+            //OBS sortAlpabetical returns an ARRAY
+            activeList.items = activeList.sortAlphabetical(true)
+            //printList takes an array
+            AppGui.printList(activeList.items);
+        });
+
+        $(document).on('click', '#sort-by-category', function(){
+
+            //find the active list
+            let activeList = AppGui.findActiveList();
+            //OBS sortByCategory returns an ARRAY
+            activeList.items = activeList.sortByCategory(true)
+            //printList takes an array
+            AppGui.printList(activeList.items);
+        });
+
         //buy item
         $(document).on('click', '#addItem', function() {
 
         });
-
 
         $(document).on('click', '#buyItem', function() {
 
@@ -50,7 +70,9 @@ class AppGui {
 
     static findActiveList(){
         let instances = GroceryList.allInstances;
-        let activeList = instances.find(instance => { return instance.active == true });
+        let activeList = instances.find(function(instance){
+            return instance.active == true
+        });
         return activeList;
     }
 
@@ -65,24 +87,25 @@ class AppGui {
             console.log(name, qty, category);
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)
-            AppGui.printList();
 
-            $('#new-item-form').clear();
+            AppGui.printList(activeList.items);
+
+            // $('#new-item-form').clear();
         });
     }
 
-    static printList(){
+
+    static printList(inputArray){
         $('.unbought-items').empty();
-        let activeList = AppGui.findActiveList();
-            activeList.items.forEach(function(item){
-                $('.unbought-items').append("<tr><td><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
-                    item.category +
-                    "</td><td>" +
-                    item.name +
-                    "</td><td>" +
-                    item.quantity +
-                    "</td><td><span class='glyphicon glyphicon-remove'></span></td></tr>");
-            });
+        inputArray.forEach(function(item){
+            $('.unbought-items').append("<tr><td><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
+                item.category +
+                "</td><td>" +
+                item.name +
+                "</td><td>" +
+                item.quantity +
+                "</td><td><span class='glyphicon glyphicon-remove'></span></td></tr>");
+        });
     }
 }
 
