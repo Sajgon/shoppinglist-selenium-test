@@ -10,6 +10,11 @@ class AppGui {
 
         this.defineEventListeners();
         this.addItemHandler();
+
+        //booleans for alternating between ascending and descending sortings
+        this.sortAlphabeticalToggle = true;
+        this.sortCategoryToggle = true;
+
     }
 
     static printAllLists(){
@@ -39,6 +44,7 @@ class AppGui {
             //make an new list with that name
 			let newList = new GroceryList(newListName);
             //the all the lists instance names
+            $('#listNameInput').val('');
             AppGui.printAllLists();
         });
 
@@ -53,13 +59,25 @@ class AppGui {
             $(this).parents('button').fadeOut(800);
         });
 
+
         $(document).on('click', '#sort-alphabetical', function(){
 
             //find the active list
             let activeList = AppGui.findActiveList();
             //A-Z
-            //OBS sortAlpabetical returns an ARRAY
-            activeList.items = activeList.sortAlphabetical(true)
+            if(that.sortAlphabeticalToggle){
+                //OBS sortAlpabetical returns an ARRAY
+                activeList.items = activeList.sortAlphabetical(true)
+                that.sortAlphabeticalToggle = false;
+            }
+
+            //Z-A
+            else{
+                //OBS sortAlpabetical returns an ARRAY
+                activeList.items = activeList.sortAlphabetical(false)
+                that.sortAlphabeticalToggle = true;
+            }
+
             //printList takes an array
             AppGui.printList(activeList.items);
         });
@@ -68,8 +86,16 @@ class AppGui {
 
             //find the active list
             let activeList = AppGui.findActiveList();
-            //OBS sortByCategory returns an ARRAY
-            activeList.items = activeList.sortByCategory(true)
+
+            if(that.sortCategoryToggle){
+                //OBS sortByCategory returns an ARRAY
+                activeList.items = activeList.sortByCategory(that.sortCategoryToggle);
+                that.sortCategoryToggle = false;
+            }
+            else{
+                activeList.items = activeList.sortByCategory(that.sortCategoryToggle);
+                that.sortCategoryToggle = true;
+            }
             //printList takes an array
             AppGui.printList(activeList.items);
         });
@@ -86,15 +112,10 @@ class AppGui {
             //get data-index from the item clicked
             let itemIndex = $(this).data("index");
 
-            // activeList.items.splice(itemIndex, 1)
-            // console.log(activeList.items);
-
             activeList.removeItemByIndex(itemIndex);
 
-            
-
-            AppGui.printList(activeList.items);
             $(this).closest('tr').fadeOut(800);
+            AppGui.printList(activeList.items);
         })
 
     }
@@ -123,16 +144,15 @@ class AppGui {
             let qty = $('.item-form-qty').val();
             let category = $('.item-form-category').val();
 
-            console.log(name, qty, category);
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)
 
             AppGui.printList(activeList.items);
 
-            // $('#new-item-form').clear();
+            $('.item-form-name').val('');
+            $('.item-form-qty').val('');
         });
     }
-
 
     static printList(inputArray){
         $('.unbought-items').empty();
@@ -148,4 +168,4 @@ class AppGui {
     }
 }
 
-$(() => gui = new AppGui());
+$(() => new AppGui());

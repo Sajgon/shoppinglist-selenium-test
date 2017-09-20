@@ -93,9 +93,15 @@ module.exports = class GroceryList {
         return sortedByName;
     }
 
-    sortByCategory() {
-        let sortedByCategory = this.items.slice().sort((a, b) => a.category > b.category);
-        return sortedByCategory;
+    sortByCategory(bool) {
+        if(bool){
+            let sortedByCategory = this.items.slice().sort((a, b) => a.category > b.category);
+            return sortedByCategory;
+        }
+        else{
+            let sortedByCategory = this.items.slice().sort((b, a) => a.category > b.category);
+            return sortedByCategory;
+        }
     }
 
     filterBoughtItems() {
