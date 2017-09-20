@@ -193,7 +193,7 @@ class AppGui {
     static printList(inputArray){
         $('.unbought-items').empty();
         inputArray.forEach(function(item, index){
-            $('.unbought-items').append("<tr><td><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
+            $('.unbought-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
                 item.category +
                 "</td><td>" +
                 item.name +

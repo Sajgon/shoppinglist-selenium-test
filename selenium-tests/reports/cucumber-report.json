@@ -1,0 +1,87 @@
+[
+  {
+    "description": "    As a shopper \n    I should be able to create my grocery list.",
+    "elements": [
+      {
+        "id": "adding-a-list;create-a-new-grocery-list",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Create a new grocery list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I have started the application",
+            "result": {
+              "status": "passed",
+              "duration": 2071734907
+            },
+            "line": 6,
+            "match": {
+              "location": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/step-definitions/add-list.js:4"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I enter a unique name in the text input",
+            "result": {
+              "status": "passed",
+              "duration": 3136011817
+            },
+            "line": 7,
+            "match": {
+              "location": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/step-definitions/add-list.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "click the button",
+            "result": {
+              "status": "passed",
+              "duration": 272098
+            },
+            "line": 8,
+            "match": {
+              "location": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/step-definitions/add-list.js:18"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "a list will be created and visible in the list",
+            "result": {
+              "status": "passed",
+              "duration": 209118
+            },
+            "line": 9,
+            "match": {
+              "location": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/step-definitions/add-list.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 189122670
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/node_modules/selenium-cucumber-js/runtime/world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "adding-a-list",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Adding a list",
+    "tags": [],
+    "uri": "/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/features/add-list.feature"
+  }
+]

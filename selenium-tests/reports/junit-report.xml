@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="adding-a-list;create-a-new-grocery-list" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/features/add-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have started the application" classname="adding-a-list;create-a-new-grocery-list" time="2.071734907">
+        </testcase>
+        <testcase name="When I enter a unique name in the text input" classname="adding-a-list;create-a-new-grocery-list" time="3.136011817">
+        </testcase>
+        <testcase name="And click the button" classname="adding-a-list;create-a-new-grocery-list" time="0.000272098">
+        </testcase>
+        <testcase name="Then a list will be created and visible in the list" classname="adding-a-list;create-a-new-grocery-list" time="0.000209118">
+        </testcase>
+    </testsuite>
+</testsuites>
