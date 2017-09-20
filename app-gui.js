@@ -24,9 +24,9 @@ class AppGui {
         let instances = GroceryList.allInstances;
 
         instances.forEach(function(instance,index){
-            $('.master-list-view').append("<button type='button' value='" +
+            $('.master-list-view').append("<button type='button' data-index='" +
                 index +
-                "'class='btn btn-default list-button'><span style='float: left;'>" +
+                "'class='btn btn-default'><span class='select-list' style='float: left;'>" +
                 instance.name +
                 "</span> <span class='glyphicon glyphicon-remove remove-list' style='float: right;'></span></button>");
         })
@@ -52,13 +52,32 @@ class AppGui {
         $(document).on('click', '.remove-list', function(e) {
             e.preventDefault();
 
-            let listID = $(this).parents('button').val();
+            let removeListID = $(this).parents('button').data('index');
+            console.log("ID of the list to be removed: " + removeListID)
 
-            GroceryList.allInstances.splice(listID, 1)
+            GroceryList.allInstances.splice(removeListID, 1)
             AppGui.printAllLists();
+            
             $(this).parents('button').fadeOut(800);
         });
 
+        //changing list
+        $(document).on('click', '.select-list', function(e){
+            e.preventDefault();
+
+            let activeList = AppGui.findActiveList();
+
+            //save the index of the now selected list
+            let changeListIndex = $(this).closest('button').data('index');
+
+            //see method "changeActiveList" in grocery-list
+            activeList.changeActiveList(changeListIndex);
+
+            //find the new active list
+            activeList = AppGui.findActiveList();
+            //print the list of the new active list
+            AppGui.printList(activeList.items);
+        });
 
         $(document).on('click', '#sort-alphabetical', function(){
 
@@ -117,7 +136,6 @@ class AppGui {
             $(this).closest('tr').fadeOut(800);
             AppGui.printList(activeList.items);
         })
-
     }
 
     static findActiveList(){

@@ -24,6 +24,15 @@ module.exports = class GroceryList {
         this.active = true;
     }
 
+    changeActiveList(indexOfInstance){
+        //set all instances .active to "false"
+        GroceryList.allInstances.forEach(function(list){
+            list.active = false;
+        });
+        //set the selected instance .active to "true"
+        GroceryList.allInstances[indexOfInstance].active = true;
+    }
+
     addItem(name, quantity, category) {
 
         this.items.forEach(function(item) {
@@ -34,7 +43,6 @@ module.exports = class GroceryList {
 
         let newItem = new GroceryListItem(name, quantity, category);
         this.items.push(newItem);
-
     }
 
     removeItem(itemName) {
