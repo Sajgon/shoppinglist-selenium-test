@@ -21,7 +21,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     When('I click in the listview', function () {
-        assert.doesNotThrow(() => TestList.sortByCategory());
+        assert.doesNotThrow(() => TestList.sortByCategory(true));
     });
 
     Then('the function should sort items by alphabetical category name', function () {
@@ -36,7 +36,7 @@ defineSupportCode(function({Given, When, Then}) {
             }
         });
 
-        assert.deepEqual(TestList.sortByCategory(), sortedList);
+        assert.deepEqual(TestList.sortByCategory(true), sortedList);
 
     });
 });
