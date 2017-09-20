@@ -48,6 +48,13 @@ module.exports = class GroceryList {
         this.items = filteredArray;
     }
 
+    removeItemByIndex(index) {
+
+        // ta bort matvara i sin shoppinglista.
+
+        this.items.splice(index, 1)
+    }
+
     buy(itemName) {
 
         let item = {};

@@ -48,7 +48,7 @@ class AppGui {
 
             let listID = $(this).parents('button').val();
 
-            GroceryList.allInstances.splice(listID, listID+1)
+            GroceryList.allInstances.splice(listID, 1)
             AppGui.printAllLists();
             $(this).parents('button').fadeOut(800);
         });
@@ -81,9 +81,20 @@ class AppGui {
         $(document).on('click', '.remove-item', function(e) {
 
             e.preventDefault();
-            let itemValue = $(this).val();
-            console.log(itemValue);
-            // $(this).closest('tr').fadeOut(800);
+            let activeList = AppGui.findActiveList();
+
+            //get data-index from the item clicked
+            let itemIndex = $(this).data("index");
+
+            // activeList.items.splice(itemIndex, 1)
+            // console.log(activeList.items);
+
+            activeList.removeItemByIndex(itemIndex);
+
+            
+
+            AppGui.printList(activeList.items);
+            $(this).closest('tr').fadeOut(800);
         })
 
     }
@@ -94,7 +105,14 @@ class AppGui {
             return instance.active == true
         });
         return activeList;
+    }
 
+    static findActiveListIndex(){
+        let instances = GroceryList.allInstances;
+        let activeList = instances.findIndex(function(instance){
+            return instance.active == true
+        });
+        return activeList;
     }
 
     addItemHandler() {
@@ -125,7 +143,7 @@ class AppGui {
                 item.name +
                 "</td><td>" +
                 item.quantity +
-                "</td><td " + "value='" + index + "'class='remove-item' ><span class='glyphicon glyphicon-remove'></span></td></tr>");
+                "</td><td " + "data-index='" + index + "'class='remove-item' ><span class='glyphicon glyphicon-remove'></span></td></tr>");
         });
     }
 }
