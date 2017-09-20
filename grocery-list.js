@@ -81,6 +81,10 @@ module.exports = class GroceryList {
         return false;
     }
 
+    buyIndex(indexOfItem){
+        this.items[indexOfItem].bought = true;
+    }
+
     sortAlphabetical(arg) {
         // calling the function with an true or false arg
         // true = ascending, false = reversed

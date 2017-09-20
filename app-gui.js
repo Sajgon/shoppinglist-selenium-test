@@ -120,8 +120,26 @@ class AppGui {
         });
 
         //buy item
-        $(document).on('click', '#buyItem', function() {
-        })
+        $(document).on('click', '.buy-item', function(e) {
+
+            e.preventDefault();
+            let activeList = AppGui.findActiveList();
+            console.log("klick it")
+
+            //get data-index from the item clicked
+            let itemIndex = $(this).closest('tr').data("index");
+            console.log(itemIndex)
+            activeList.buyIndex(itemIndex);
+
+            //the item is now marked as bought, but
+            //...how do we replace glyphicon-unchecked with glyphicon-ok??
+            console.log($(this));
+            console.log($(this).children('span'));
+            $(this).children('span').removeClass("glyphicon-unchecked");
+            $(this).children('span').addClass("glyphicon-ok");
+
+            AppGui.printList(activeList.items);
+        });
 
         $(document).on('click', '.remove-item', function(e) {
 
