@@ -47,6 +47,7 @@ body{
 .master-list-view > button:hover{
 	background-color: #5ac8fa;
 }
+
 thead{
 	background-color: #212121;
 	color: white;
@@ -89,6 +90,12 @@ td{
 	margin: 2px 0px 10px 1px;
 	background-color: #f7f7f7;
 	border-radius: 25px;
+    outline:none;
+}
+
+.btn-secondary:focus {
+ outline:none;
+ border: 0;
 }
 
 .back-button {
@@ -106,13 +113,52 @@ input {
     height: 40px;
     border: 2px solid #E8E9EA;
     outline: none;
+    margin-bottom: 8px;
 }
-
-button { outline: none; }
 
 .main-header {
     padding-bottom: 20px;
     button {
         height: 40px;
     }
+}
+
+.sort-btn {
+    background: #E8E9EA;
+    padding: 8px 18px;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    margin-top: 0;
+}
+
+.submit-btn:focus {
+ outline:none;
+}
+
+button:focus {outline:0;}
+
+@media screen and (max-width: 767px) {
+
+    body{
+        padding-top: 2vh;
+    }
+
+    .back-button {
+        padding-bottom: 8px;
+    }
+
+    .submit-btn {
+        margin-top: 8px;
+    }
+
+    .sort-btn {
+        display: none;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
 }

@@ -35,7 +35,6 @@
 	<div class="master-view">
 	<!-- HÄR ÄR MASTER VIEW</h1> -->
 		<div class="container">
-
 			<div class="row mg-top-10px">
 				<div id="newListSuccessAlert" class="col-xs-8 alert alert-success" role="alert"><b>Grattis!</b> Du har skapat en ny shoppinglista! </div>
 				<div id="newListErrorAlert" class="col-xs-8 alert alert-danger" role="alert"><b>Fel!</b> Något gick snett, ny lista skapades INTE! </div>
@@ -58,23 +57,21 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 
 	<div class="detail-view">
 	        <div class="container">
 	            <div class="row">
-	            <div class="col-ms-12">
-	                <div class="back-button">
-	                    <p><span>< </span>Tillbaks till dina listor</p>
-	                </div>
-	            </div>
-
+		            <div class="col-sm-12">
+		                <div class="back-button">
+		                    <p><span>< </span>Tillbaks till dina listor</p>
+		                </div>
+		            </div>
 	            </div>
 
 	            <div class="row">
+	            <div class="col-sm-12">
 				<!-- NEW ITEM INPUT FORM -->
 				<form id="new-item-form">
 					<div class="form-group row">
@@ -94,17 +91,17 @@
 							</select>
 						</div>
 						<div class="col-sm-2">
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary submit-btn">Submit</button>
 						</div>
 					</div>
 				</form>
 
 			<h2>LISTANS NAMN</h2>
 			<!-- Kategorisortering -->
-			<button type="button" id="sort-by-category"class="btn btn-secondary btn-xs">sortera efter kategori <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
+			<button type="button" id="sort-by-category" class="btn btn-secondary sort-btn btn-xs">sortera efter kategori <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
 
 			<!-- Namnsortering -->
-            <button type="button" id="sort-alphabetical"class="btn btn-secondary btn-xs">sortera efter namn <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
+            <button type="button" id="sort-alphabetical" class="btn btn-secondary sort-btn btn-xs">sortera efter namn <span class="glyphicon glyphicon-chevron-down"></span> <span class="glyphicon glyphicon-chevron-up"></span></button>
 			<!-- Panel -->
 				<div class="panel panel-default row col-sm-11 nopadding">
 				  <!-- Default panel contents -->
@@ -115,11 +112,11 @@
 					  	<!-- Tablehead -->
 					    <thead>
 					      <tr>
-						    <th class="thKopt">KÖPT</th>
-				   			<th class="thKategori">KATEGORI</th>
-				    		<th class="thNamn">NAMN</th>
-				    		<th class="thAntal">ANTAL</th>
-				    		<th class="thTaBort">TA BORT</th>
+						    <th class="thKopt">Köpt</th>
+				   			<th class="thKategori">Kategori</th>
+				    		<th class="thNamn">Namn</th>
+				    		<th class="thAntal">Antal</th>
+				    		<th class="thTaBort">Ta Bort</th>
 					      </tr>
 					    </thead>
 					    <!-- Tablebody -->
@@ -128,6 +125,8 @@
 					    </tbody>
 					  </table>
 					</div>
+				</div>
+
 				</div>
 			</div>
 			</div>
