@@ -10,17 +10,17 @@ module.exports = class GroceryList {
 
         this.name = name;
         this.items = [];
-		
+
         // Add a static property if not already set
         GroceryList.allInstances = GroceryList.allInstances || [];
-		
+
 		// Check that a list with that name doesn't exist already
 		GroceryList.allInstances.forEach(function(list){
             if(list.name == name){
 				throw new Error("There's already a list with that name.");
 			}
         });
-		
+
         // Push this to the static property allInstances
         GroceryList.allInstances.push(this);
 
@@ -126,9 +126,16 @@ module.exports = class GroceryList {
         }
     }
 
+    displayAllItems() {
+        let filteredArray = this.items.slice().filter((item) => {
+            return item.bought === true && item.bought === false;
+        });
+        return filteredArray;
+    }
+
     filterBoughtItems() {
         // Visa endast köpta varor
-        let filteredArray = this.items.filter((item) => {
+        let filteredArray = this.items.slice().filter((item) => {
             return item.bought === true;
         });
         return filteredArray;
@@ -136,7 +143,7 @@ module.exports = class GroceryList {
 
     filterUnboughtItems() {
         // Visa endast oköpta varor
-        let filteredArray = this.items.filter((item) => {
+        let filteredArray = this.items.slice().filter((item) => {
             return item.bought === false;
         });
         return filteredArray;

@@ -95,6 +95,7 @@ td{
     outline:none;
 }
 
+
 .btn-secondary:focus {
  outline:none;
  border: 0;
@@ -111,7 +112,7 @@ td{
     }
 }
 
-input {
+.new-list-input {
     height: 40px;
     border: 2px solid #E8E9EA;
     outline: none;
@@ -129,6 +130,7 @@ input {
     background: #E8E9EA;
     padding: 8px 18px;
     margin-right: 10px;
+    font-size: 14px;
 }
 
 .submit-btn {
@@ -141,8 +143,17 @@ input {
 
 button:focus {outline:0;}
 
-.list-name-header > h2 { color: #5a5a5a; }
+.list-name-header > h2 {
+    margin: 20px 0;
+    color: #5a5a5a;
+}
 .list-name-header > h2 > .name { color: #5ac8fa; }
+
+.list-view {
+    margin-top: 20px;
+}
+
+.view-form { margin-right:  10px; }
 
 @media screen and (max-width: 767px) {
 
@@ -160,6 +171,7 @@ button:focus {outline:0;}
 
     .sort-btn {
         display: none;
+        font-size: 12px;
     }
 
     table {

@@ -48,7 +48,6 @@ class AppGui {
             AppGui.printAllLists();
         });
 
-        //remove item *** Only frontend, removieList need to be written
         $(document).on('click', '.remove-list', function(e) {
             e.preventDefault();
 
@@ -130,6 +129,27 @@ class AppGui {
                 that.sortCategoryToggle = true;
             }
             //printList takes an array
+            AppGui.printList(activeList.items);
+        });
+
+        $(document).on('click', '#showAllItems', function(){
+
+            let activeList = AppGui.findActiveList();
+            activeList.items = activeList.displayAllItems();
+            AppGui.printList(activeList.items);
+        });
+
+        $(document).on('click', '#showBoughtItems', function(){
+
+            let activeList = AppGui.findActiveList();
+            activeList.items = activeList.filterBoughtItems();
+            AppGui.printList(activeList.items);
+        });
+
+        $(document).on('click', '#showUnboughtItems', function(){
+
+            let activeList = AppGui.findActiveList();
+            activeList.items = activeList.filterUnboughtItems();
             AppGui.printList(activeList.items);
         });
 
@@ -219,14 +239,14 @@ class AppGui {
     }
 
     static printList(inputArray){
-        $('.unbought-items').empty();
+        $('.all-items').empty();
 
         inputArray.forEach(function(item, index){
 			console.log("item.bought",item.bought);
 			var itemBoughtClass = "glyphicon-unchecked";
 			if(item.bought){itemBoughtClass = "glyphicon-ok"}
 
-            $('.unbought-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td>" +
+            $('.all-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td>" +
                 item.category +
                 "</td><td>" +
                 item.name +
