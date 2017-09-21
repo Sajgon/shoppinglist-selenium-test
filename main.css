@@ -10,9 +10,8 @@ Light-Blue: #5ac8fa
 body{
 	font-family: 'Open Sans', sans-serif;
     background-color: #F7F7F7;
+    padding-top: 10vh;
 }
-
-.master-view { padding-top: 10vh; }
 
 .header-container{
 	background-color: #212121;
@@ -113,4 +112,7 @@ button { outline: none; }
 
 .main-header {
     padding-bottom: 20px;
+    button {
+        height: 40px;
+    }
 }

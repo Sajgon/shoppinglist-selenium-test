@@ -26,7 +26,7 @@ class AppGui {
         instances.forEach(function(instance,index){
             $('.master-list-view').append("<button type='button' data-index='" +
                 index +
-                "'class='btn btn-default'><span class='select-list' style='float: left;'>" +
+                "'class='btn btn-default select-list-parent'><span class='select-list' style='float: left;'>" +
                 instance.name +
                 "</span> <span class='glyphicon glyphicon-remove remove-list' style='float: right;'></span></button>");
         })
@@ -57,12 +57,12 @@ class AppGui {
 
             GroceryList.allInstances.splice(removeListID, 1)
             AppGui.printAllLists();
-            
+
             $(this).parents('button').fadeOut(800);
         });
 
         //changing list
-        $(document).on('click', '.select-list', function(e){
+        $(document).on('click', '.select-list-parent', function(e){
             e.preventDefault();
 
             let activeList = AppGui.findActiveList();
@@ -146,9 +146,9 @@ class AppGui {
             console.log($(this).children('span'));
             $(this).children('span').removeClass("glyphicon-unchecked");
             $(this).children('span').addClass("glyphicon-ok");
-			
+
 			/* This is not working because list is printed afterwards to ($this) is not working
-			// Toggle bought/unbougt icon		
+			// Toggle bought/unbougt icon
 			if($(this).children('span').hasClass("glyphicon-unchecked")){
 				// Icon has now been checked
 				$(this).children('span').removeClass("glyphicon-unchecked");
@@ -159,9 +159,9 @@ class AppGui {
 				$(this).children('span').addClass(" glyphicon-unchecked");
 			}*/
 
-			
+
             AppGui.printList(activeList.items);
-			
+
         });
 
         $(document).on('click', '.remove-item', function(e) {
@@ -215,12 +215,12 @@ class AppGui {
 
     static printList(inputArray){
         $('.unbought-items').empty();
-		
+
         inputArray.forEach(function(item, index){
 			console.log("item.bought",item.bought);
 			var itemBoughtClass = "glyphicon-unchecked";
 			if(item.bought){itemBoughtClass = "glyphicon-ok"}
-			
+
             $('.unbought-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td>" +
                 item.category +
                 "</td><td>" +
