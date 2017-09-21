@@ -24,7 +24,7 @@ module.exports = class GroceryList {
 
     changeActiveList(indexOfInstance){
         //set all instances .active to "false"
-        makeAllListsInactive()
+        this.makeAllListsInactive()
         //set the selected instance .active to "true"
         GroceryList.allInstances[indexOfInstance].active = true;
     }
