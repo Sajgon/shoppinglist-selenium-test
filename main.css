@@ -12,6 +12,8 @@ body{
     background-color: #F7F7F7;
 }
 
+.master-view { padding-top: 10vh; }
+
 .header-container{
 	background-color: #212121;
 	color: #F7F7F7;
@@ -25,24 +27,23 @@ body{
 	margin-top: 10px;
 }
 
-.new-list-input{
-	height: 30px;
-}
-
-.new-list-btn{
+.app-btn{
 	background-color: #007aff;
     color: #FFF;
 	border: none;
     border-color: grey;
-	height: 30px;
+	height: 40px;
+    margin-left: 12px;
+    padding: 0 12px;
 }
-.new-list-btn:hover{
+.app-btn:hover {
 	opacity: 0.9;
 }
 
 .master-list-view > button{
 	background-color: #5ac8fa;
 	border-color: white;
+    height: 40px;
 }
 .master-list-view > button:hover{
 	background-color: #5ac8fa;
@@ -100,4 +101,16 @@ td{
     span {
         font-size: 18px;
     }
+}
+
+input {
+    height: 40px;
+    border: 2px solid #E8E9EA;
+    outline: none;
+}
+
+button { outline: none; }
+
+.main-header {
+    padding-bottom: 20px;
 }
