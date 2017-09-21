@@ -5,5 +5,5 @@ Feature: Adding a list
     Scenario: Create a new grocery list
         Given that I have started the application 
         When I enter a unique name in the text input
-        And click the button 
+        And I click the button 
         Then a list will be created and visible in the list

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-    <testsuite name="adding-a-list;create-a-new-grocery-list" tests="4" failures="0" skipped="0">
+    <testsuite name="adding-a-list;create-a-new-grocery-list" tests="4" failures="1" skipped="0">
         <properties>
             <property name="URI" value="/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/features/add-list.feature">
             </property>
         </properties>
-        <testcase name="Given that I have started the application" classname="adding-a-list;create-a-new-grocery-list" time="2.071734907">
+        <testcase name="Given that I have started the application" classname="adding-a-list;create-a-new-grocery-list" time="1.97051496">
         </testcase>
-        <testcase name="When I enter a unique name in the text input" classname="adding-a-list;create-a-new-grocery-list" time="3.136011817">
+        <testcase name="When I enter a unique name in the text input" classname="adding-a-list;create-a-new-grocery-list" time="0.020608842">
         </testcase>
-        <testcase name="And click the button" classname="adding-a-list;create-a-new-grocery-list" time="0.000272098">
+        <testcase name="And I click the button" classname="adding-a-list;create-a-new-grocery-list" time="0.125910259">
         </testcase>
-        <testcase name="Then a list will be created and visible in the list" classname="adding-a-list;create-a-new-grocery-list" time="0.000209118">
+        <testcase name="Then a list will be created and visible in the list" classname="adding-a-list;create-a-new-grocery-list" time="0.089542643">
+            <failure message="AssertionError: Unspecified AssertionError">AssertionError: Unspecified AssertionError
+    at createWorld.&lt;anonymous&gt; (/Users/pellehardstedt/Documents/Git/wuma16-testning-shoppinglist/selenium-tests/step-definitions/add-list.js:30:9)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
         </testcase>
     </testsuite>
 </testsuites>

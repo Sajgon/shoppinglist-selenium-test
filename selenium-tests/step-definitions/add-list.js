@@ -6,24 +6,25 @@ module.exports = function () {
     });
 
     this.When(/^I enter a unique name in the text input$/, async function () {
-
-        //get text-input and button
+        //get text-input
         let inputElement = await $('#listNameInput');
-        let addListButton = await $('#addList');
-
         //input to text-input
         inputElement[0].sendKeys('My Grocery List');
         //wait 2 seconds (just for you to see in the browser that the test is working)
-        await driver.sleep(2000);
+        // await driver.sleep(2000);
+    });
+
+    this.When(/^I click the button$/, async function () {
+        //get button
+        let addListButton = await $('#addList');
         //click the button
         addListButton[0].click();
     });
 
-    this.When(/^click the button$/, async function () {
-
-    });
-
     this.Then(/^a list will be created and visible in the list$/, async function () {
-
+        let element = await $('.master-list-view button');
+        //assert that there is a button in the master-list-view
+        //(could be more accurate)
+        assert(element[0]);
     });
 };

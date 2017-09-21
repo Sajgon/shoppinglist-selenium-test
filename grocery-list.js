@@ -17,20 +17,22 @@ module.exports = class GroceryList {
         GroceryList.allInstances.push(this);
 
         //everytime a new list is created, set all lists .active to 'false'
-        GroceryList.allInstances.forEach(function(list){
-            list.active = false;
-        });
+        this.makeAllListsInactive();
         //and then set THIS list .active to 'true'
         this.active = true;
     }
 
     changeActiveList(indexOfInstance){
         //set all instances .active to "false"
+        makeAllListsInactive()
+        //set the selected instance .active to "true"
+        GroceryList.allInstances[indexOfInstance].active = true;
+    }
+
+    makeAllListsInactive(){
         GroceryList.allInstances.forEach(function(list){
             list.active = false;
         });
-        //set the selected instance .active to "true"
-        GroceryList.allInstances[indexOfInstance].active = true;
     }
 
     addItem(name, quantity, category) {
