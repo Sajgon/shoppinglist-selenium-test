@@ -141,6 +141,9 @@ input {
 
 button:focus {outline:0;}
 
+.list-name-header > h2 { color: #5a5a5a; }
+.list-name-header > h2 > .name { color: #5ac8fa; }
+
 @media screen and (max-width: 767px) {
 
     body{

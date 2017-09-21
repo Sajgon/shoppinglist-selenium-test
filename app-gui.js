@@ -77,8 +77,13 @@ class AppGui {
             activeList = AppGui.findActiveList();
             //print the list of the new active list
 
+            //Add listname to detail view
+            $('.list-name-header').empty().append('<h2>Shopping Lista: <span class="name">' + activeList.name + '</span></h2>')
+
             $('.master-view').hide();
             $('.detail-view').show();
+
+            console.log(activeList.name);
 
             AppGui.printList(activeList.items);
         });
