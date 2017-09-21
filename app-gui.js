@@ -137,8 +137,22 @@ class AppGui {
             console.log($(this).children('span'));
             $(this).children('span').removeClass("glyphicon-unchecked");
             $(this).children('span').addClass("glyphicon-ok");
+			
+			/* This is not working because list is printed afterwards to ($this) is not working
+			// Toggle bought/unbougt icon		
+			if($(this).children('span').hasClass("glyphicon-unchecked")){
+				// Icon has now been checked
+				$(this).children('span').removeClass("glyphicon-unchecked");
+				$(this).children('span').addClass(" glyphicon-ok");
+			}else if($(this).children('span').hasClass("glyphicon-ok")){
+				// Icon has now been unchecked
+				$(this).children('span').removeClass("glyphicon-ok");
+				$(this).children('span').addClass(" glyphicon-unchecked");
+			}*/
 
+			
             AppGui.printList(activeList.items);
+			
         });
 
         $(document).on('click', '.remove-item', function(e) {
@@ -194,7 +208,7 @@ class AppGui {
         $('.unbought-items').empty();
 		
         inputArray.forEach(function(item, index){
-			//console.log("item.bought",item.bought);
+			console.log("item.bought",item.bought);
 			var itemBoughtClass = "glyphicon-unchecked";
 			if(item.bought){itemBoughtClass = "glyphicon-ok"}
 			
