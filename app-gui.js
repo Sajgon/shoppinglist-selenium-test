@@ -6,7 +6,7 @@ class AppGui {
         //start with all views hidden
 
         $('.master-view').show();
-        $('.detail-view').show();
+        $('.detail-view').hide();
 
         this.defineEventListeners();
         this.addItemHandler();
@@ -76,7 +76,16 @@ class AppGui {
             //find the new active list
             activeList = AppGui.findActiveList();
             //print the list of the new active list
+
+            $('.master-view').hide();
+            $('.detail-view').show();
+
             AppGui.printList(activeList.items);
+        });
+
+        $(document).on('click', '.back-button', function(e){
+            $('.master-view').show();
+            $('.detail-view').hide();
         });
 
         $(document).on('click', '#sort-alphabetical', function(){
