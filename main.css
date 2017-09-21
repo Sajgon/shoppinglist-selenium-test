@@ -1,6 +1,15 @@
+/**
+Hazy-White: #F7F7F7;
+Mid-Gray: #E8E9EA;
+Dark-Gray: #5a5a5a;
+Blue: #007AFF
+Light-Blue: #5ac8fa
+**/
+
 
 body{
 	font-family: 'Open Sans', sans-serif;
+    background-color: #F7F7F7;
 }
 
 .header-container{
@@ -79,4 +88,15 @@ td{
 	margin: 2px 0px 10px 1px;
 	background-color: #f7f7f7;
 	border-radius: 25px;
+}
+
+.back-button {
+    font-size: 15px;
+    font-weight: bold;
+    color: #007AFF;
+    padding-bottom: 30px;
+    cursor: pointer;
+    span {
+        font-size: 18px;
+    }
 }
