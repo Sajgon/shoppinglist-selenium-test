@@ -192,8 +192,13 @@ class AppGui {
 
     static printList(inputArray){
         $('.unbought-items').empty();
+		
         inputArray.forEach(function(item, index){
-            $('.unbought-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon glyphicon-ok'></span></td><td>" +
+			//console.log("item.bought",item.bought);
+			var itemBoughtClass = "glyphicon-unchecked";
+			if(item.bought){itemBoughtClass = "glyphicon-ok"}
+			
+            $('.unbought-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td>" +
                 item.category +
                 "</td><td>" +
                 item.name +
