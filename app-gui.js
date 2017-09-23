@@ -133,22 +133,19 @@ class AppGui {
         $(document).on('click', '#showAllItems', function(){
 
             let activeList = AppGui.findActiveList();
-            activeList.items = activeList.displayAllItems();
-            AppGui.printList(activeList.items);
+            AppGui.printList(activeList.displayAllItems());
         });
 
         $(document).on('click', '#showBoughtItems', function(){
 
             let activeList = AppGui.findActiveList();
-            activeList.items = activeList.filterBoughtItems();
-            AppGui.printList(activeList.items);
+            AppGui.printList(activeList.filterBoughtItems());
         });
 
         $(document).on('click', '#showUnboughtItems', function(){
 
             let activeList = AppGui.findActiveList();
-            activeList.items = activeList.filterUnboughtItems();
-            AppGui.printList(activeList.items);
+            AppGui.printList(activeList.filterUnboughtItems());
         });
 
         //buy item

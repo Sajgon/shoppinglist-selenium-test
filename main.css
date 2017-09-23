@@ -26,6 +26,10 @@ body{
 	margin-top: 10px;
 }
 
+.detail-view{
+	display: none;
+}
+
 .app-btn{
 	background-color: #007aff;
     color: #FFF;

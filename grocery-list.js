@@ -128,7 +128,7 @@ module.exports = class GroceryList {
 
     displayAllItems() {
         let filteredArray = this.items.slice().filter((item) => {
-            return item.bought === true && item.bought === false;
+            return item.bought === true || item.bought === false;
         });
         return filteredArray;
     }
