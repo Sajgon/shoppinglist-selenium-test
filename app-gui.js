@@ -52,7 +52,6 @@ class AppGui {
             e.preventDefault();
 
             let removeListID = $(this).parents('button').data('index');
-            console.log("ID of the list to be removed: " + removeListID)
 
             GroceryList.allInstances.splice(removeListID, 1)
             AppGui.printAllLists();
@@ -82,7 +81,6 @@ class AppGui {
             $('.master-view').hide();
             $('.detail-view').show();
 
-            console.log(activeList.name);
 
             AppGui.printList(activeList.items);
         });
@@ -158,17 +156,13 @@ class AppGui {
 
             e.preventDefault();
             let activeList = AppGui.findActiveList();
-            console.log("klick it")
 
             //get data-index from the item clicked
             let itemIndex = $(this).closest('tr').data("index");
-            console.log(itemIndex)
             activeList.buyIndex(itemIndex);
 
             //the item is now marked as bought, but
             //...how do we replace glyphicon-unchecked with glyphicon-ok??
-            console.log($(this));
-            console.log($(this).children('span'));
             $(this).children('span').removeClass("glyphicon-unchecked");
             $(this).children('span').addClass("glyphicon-ok");
 
@@ -242,7 +236,6 @@ class AppGui {
         $('.all-items').empty();
 
         inputArray.forEach(function(item, index){
-			console.log("item.bought",item.bought);
 			var itemBoughtClass = "glyphicon-unchecked";
 			if(item.bought){itemBoughtClass = "glyphicon-ok"}
 
