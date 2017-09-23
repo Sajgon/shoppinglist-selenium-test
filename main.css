@@ -48,10 +48,11 @@ input {
 .master-list-view > button{
 	background-color: #5ac8fa;
 	border: 0;
-    height: 55px;
+    height: 50px;
     font-size: 16px;
     letter-spacing: 0.05em;
     padding: 0px 18px;
+    margin-bottom: 6px;
 }
 .master-list-view > button:hover{
 	background-color: #5ac8fa;
@@ -170,6 +171,10 @@ button:focus {outline:0;}
 
 .table-content {
     margin-top: 20px;
+}
+
+#preset {
+    font-size: 28px;
 }
 
 @media screen and (max-width: 767px) {

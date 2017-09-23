@@ -14,6 +14,7 @@ class AppGui {
         //booleans for alternating between ascending and descending sortings
         this.sortAlphabeticalToggle = true;
         this.sortCategoryToggle = true;
+        this.listPreset();
 
     }
 
@@ -29,6 +30,28 @@ class AppGui {
                 "'class='btn btn-default select-list-parent'><span class='select-list' style='float: left;'>" +
                 instance.name +
                 "</span> <span class='glyphicon glyphicon-remove remove-list' style='float: right;'></span></button>");
+        })
+    }
+
+    listPreset() {
+
+        $(document).on('click', '#preset', function() {
+
+            $( "#preset" ).removeClass('glyphicon glyphicon-star-empty');
+            $( "#preset" ).addClass('glyphicon glyphicon-star');
+
+            // Add some fake lists with items
+            let a = new GroceryList('Handla Idag');
+            let b = new GroceryList('Handla Senare');
+            AppGui.printAllLists();
+
+            a.addItem('Höns', 4, 'Elektronik');
+            a.addItem('Saft', 1, 'Mat');
+            a.addItem('Tröja', 1, 'Kläder');
+
+            b.addItem('Halsduk', 4, 'Kläder');
+            b.addItem('Saft', 1, 'Mat');
+            b.addItem('Tröja', 1, 'Kläder');
         })
     }
 
