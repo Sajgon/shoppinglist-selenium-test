@@ -11,6 +11,12 @@ body{
 	font-family: 'Open Sans', sans-serif;
     background-color: #F7F7F7;
     padding-top: 10vh;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+input {
+    letter-spacing: 0.05em;
 }
 
 .header-container{
@@ -45,8 +51,12 @@ body{
 
 .master-list-view > button{
 	background-color: #5ac8fa;
-	border-color: white;
-    height: 40px;
+	border: 0;
+    height: 50px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    padding: 0px 18px;
+    margin-bottom: 6px;
 }
 .master-list-view > button:hover{
 	background-color: #5ac8fa;
@@ -55,6 +65,8 @@ body{
 thead{
 	background-color: #212121;
 	color: white;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 th{
   height:70px;
@@ -99,7 +111,6 @@ td{
     outline:none;
 }
 
-
 .btn-secondary:focus {
  outline:none;
  border: 0;
@@ -107,7 +118,7 @@ td{
 
 .back-button {
     font-size: 15px;
-    font-weight: bold;
+    letter-spacing: 0;
     color: #007AFF;
     padding-bottom: 30px;
     cursor: pointer;
@@ -157,7 +168,18 @@ button:focus {outline:0;}
     margin-top: 20px;
 }
 
-.view-form { margin-right:  10px; }
+.view-form {
+    margin-right:  10px;
+    font-weight: 400;
+}
+
+.table-content {
+    margin-top: 20px;
+}
+
+#preset {
+    font-size: 28px;
+}
 
 @media screen and (max-width: 767px) {
 
@@ -184,6 +206,10 @@ button:focus {outline:0;}
 
     input {
         margin-bottom: 10px;
+    }
+
+    .main-header {
+        font-size: 31px;
     }
 
 }

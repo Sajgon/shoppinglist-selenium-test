@@ -14,6 +14,7 @@ class AppGui {
         //booleans for alternating between ascending and descending sortings
         this.sortAlphabeticalToggle = true;
         this.sortCategoryToggle = true;
+        this.listPreset();
 
     }
 
@@ -32,6 +33,28 @@ class AppGui {
         })
     }
 
+    listPreset() {
+
+        $(document).on('click', '#preset', function() {
+
+            $( "#preset" ).removeClass('glyphicon glyphicon-star-empty');
+            $( "#preset" ).addClass('glyphicon glyphicon-star');
+
+            // Add some fake lists with items
+            let a = new GroceryList('Handla Idag');
+            let b = new GroceryList('Handla Senare');
+            AppGui.printAllLists();
+
+            a.addItem('Höns', 4, 'Elektronik');
+            a.addItem('Saft', 1, 'Mat');
+            a.addItem('Tröja', 1, 'Kläder');
+
+            b.addItem('Halsduk', 4, 'Kläder');
+            b.addItem('Saft', 1, 'Mat');
+            b.addItem('Tröja', 1, 'Kläder');
+        })
+    }
+
     defineEventListeners() {
         let that = this;
 
@@ -41,10 +64,12 @@ class AppGui {
 
             //save the value of the name input
 			let newListName = $('#listNameInput').val();
+            // format name to Letter Case
+            newListName = newListName.charAt(0).toUpperCase() + newListName.slice(1);
             //make an new list with that name
 			let newList = new GroceryList(newListName);
             //the all the lists instance names
-            $('#listNameInput').val('');
+            let all = $('#listNameInput').val('');
             AppGui.printAllLists();
         });
 
@@ -218,6 +243,9 @@ class AppGui {
             let name = $('.item-form-name').val();
             let qty = $('.item-form-qty').val();
             let category = $('.item-form-category').val();
+
+            // format name to Letter Case
+            name = name.charAt(0).toUpperCase() + name.slice(1);
 
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)
