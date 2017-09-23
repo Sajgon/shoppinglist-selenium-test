@@ -117,6 +117,14 @@ class AppGui {
 
         $(document).on('click', '#sort-alphabetical', function(){
 
+            if ( $('#sort-alphabetical > span').hasClass('glyphicon glyphicon-chevron-down') ) {
+                $( "#sort-alphabetical > span").removeClass('glyphicon glyphicon-chevron-down');
+                $( "#sort-alphabetical > span" ).addClass('glyphicon glyphicon-chevron-up');
+            } else {
+                $( "#sort-alphabetical > span").removeClass('glyphicon glyphicon-chevron-up');
+                $( "#sort-alphabetical > span" ).addClass('glyphicon glyphicon-chevron-down');
+            }
+
             //find the active list
             let activeList = AppGui.findActiveList();
             //A-Z
@@ -138,6 +146,15 @@ class AppGui {
         });
 
         $(document).on('click', '#sort-by-category', function(){
+
+            if ( $('#sort-by-category > span').hasClass('glyphicon glyphicon-chevron-down') ) {
+                $( "#sort-by-category > span").removeClass('glyphicon glyphicon-chevron-down');
+                $( "#sort-by-category > span" ).addClass('glyphicon glyphicon-chevron-up');
+            } else {
+                $( "#sort-by-category > span").removeClass('glyphicon glyphicon-chevron-up');
+                $( "#sort-by-category > span" ).addClass('glyphicon glyphicon-chevron-down');
+            }
+
 
             //find the active list
             let activeList = AppGui.findActiveList();

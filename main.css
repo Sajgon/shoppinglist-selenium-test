@@ -108,12 +108,16 @@ td{
 	margin: 2px 0px 10px 1px;
 	background-color: #f7f7f7;
 	border-radius: 25px;
-    outline:none;
 }
 
-.btn-secondary:focus {
- outline:none;
- border: 0;
+#sort-by-category {
+    outline:none;
+    border: 0;
+}
+
+#sort-alphabetical {
+    outline:none;
+    border: 0;
 }
 
 .back-button {
@@ -179,6 +183,11 @@ button:focus {outline:0;}
 
 #preset {
     font-size: 28px;
+}
+
+.glyphicon-chevron-down {
+    font-size: 12px;
+    margin-left: 6px;
 }
 
 @media screen and (max-width: 767px) {
