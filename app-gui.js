@@ -41,10 +41,12 @@ class AppGui {
 
             //save the value of the name input
 			let newListName = $('#listNameInput').val();
+            // format name to Letter Case
+            newListName = newListName.charAt(0).toUpperCase() + newListName.slice(1);
             //make an new list with that name
 			let newList = new GroceryList(newListName);
             //the all the lists instance names
-            $('#listNameInput').val('');
+            let all = $('#listNameInput').val('');
             AppGui.printAllLists();
         });
 
@@ -221,6 +223,9 @@ class AppGui {
             let name = $('.item-form-name').val();
             let qty = $('.item-form-qty').val();
             let category = $('.item-form-category').val();
+
+            // format name to Letter Case
+            name = name.charAt(0).toUpperCase() + name.slice(1);
 
             let activeList = AppGui.findActiveList();
             activeList.addItem(name, qty, category)
