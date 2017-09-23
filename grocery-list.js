@@ -101,6 +101,7 @@ module.exports = class GroceryList {
     }
 	
 	setItemBought(itemName){
+		let item = {};
 		 // Finn item med korrekt namn
         for (var i = 0; i < this.items.length; i++) {
             if (this.items[i].name === itemName) {
@@ -109,9 +110,13 @@ module.exports = class GroceryList {
 				break
 			}
 		}
+		
+		if (item) { return true; }
+        return false;
 	}
 	
 	setItemUnbought(itemName){
+		let item = {};
 		 // Finn item med korrekt namn
         for (var i = 0; i < this.items.length; i++) {
             if (this.items[i].name === itemName) {
@@ -120,6 +125,9 @@ module.exports = class GroceryList {
 				break
 			}
 		}
+		
+		if (item) { return true; }
+        return false;
 	}
 
     sortAlphabetical(arg) {
