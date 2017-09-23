@@ -15,16 +15,17 @@ class AppGui {
         this.sortAlphabeticalToggle = true;
         this.sortCategoryToggle = true;
         this.listPreset();
+        this.hideMobileForm();
 
     }
 
-    static printAllLists(){
+    static printAllLists() {
         $('.master-list-view').empty();
 
         //use the static propery "allInstances" (array)
         let instances = GroceryList.allInstances;
 
-        instances.forEach(function(instance,index){
+        instances.forEach(function(instance, index) {
             $('.master-list-view').append("<button type='button' data-index='" +
                 index +
                 "'class='btn btn-default select-list-parent'><span class='select-list' style='float: left;'>" +
@@ -39,20 +40,30 @@ class AppGui {
 
             $( "#preset" ).removeClass('glyphicon glyphicon-star-empty');
             $( "#preset" ).addClass('glyphicon glyphicon-star');
+            $( "#preset" ).delay(600).fadeOut(400);
 
             // Add some fake lists with items
             let a = new GroceryList('Handla Idag');
             let b = new GroceryList('Handla Senare');
             AppGui.printAllLists();
 
-            a.addItem('Höns', 4, 'Elektronik');
-            a.addItem('Saft', 1, 'Mat');
+            a.addItem('Apple', 4, 'Elektronik');
+            a.addItem('Päron', 1, 'Mat');
             a.addItem('Tröja', 1, 'Kläder');
+            a.addItem('Yxa', 1, 'Övrigt');
+            a.addItem('Banan', 1, 'Mat');
 
             b.addItem('Halsduk', 4, 'Kläder');
             b.addItem('Saft', 1, 'Mat');
             b.addItem('Tröja', 1, 'Kläder');
         })
+    }
+
+    hideMobileForm() {
+        $(document).on('click', '.add-new-item-mobile', function() {
+            $(this).hide();
+            $('#new-item-form').removeClass('hidden-xs');
+        });
     }
 
     defineEventListeners() {
@@ -117,12 +128,12 @@ class AppGui {
 
         $(document).on('click', '#sort-alphabetical', function(){
 
-            if ( $('#sort-alphabetical > span').hasClass('glyphicon glyphicon-chevron-down') ) {
-                $( "#sort-alphabetical > span").removeClass('glyphicon glyphicon-chevron-down');
-                $( "#sort-alphabetical > span" ).addClass('glyphicon glyphicon-chevron-up');
-            } else {
+            if ( $('#sort-alphabetical > span').hasClass('glyphicon glyphicon-chevron-up') ) {
                 $( "#sort-alphabetical > span").removeClass('glyphicon glyphicon-chevron-up');
                 $( "#sort-alphabetical > span" ).addClass('glyphicon glyphicon-chevron-down');
+            } else {
+                $( "#sort-alphabetical > span").removeClass('glyphicon glyphicon-chevron-down');
+                $( "#sort-alphabetical > span" ).addClass('glyphicon glyphicon-chevron-up');
             }
 
             //find the active list
@@ -147,12 +158,12 @@ class AppGui {
 
         $(document).on('click', '#sort-by-category', function(){
 
-            if ( $('#sort-by-category > span').hasClass('glyphicon glyphicon-chevron-down') ) {
-                $( "#sort-by-category > span").removeClass('glyphicon glyphicon-chevron-down');
-                $( "#sort-by-category > span" ).addClass('glyphicon glyphicon-chevron-up');
-            } else {
+            if ( $('#sort-by-category > span').hasClass('glyphicon glyphicon-chevron-up') ) {
                 $( "#sort-by-category > span").removeClass('glyphicon glyphicon-chevron-up');
                 $( "#sort-by-category > span" ).addClass('glyphicon glyphicon-chevron-down');
+            } else {
+                $( "#sort-by-category > span").removeClass('glyphicon glyphicon-chevron-down');
+                $( "#sort-by-category > span" ).addClass('glyphicon glyphicon-chevron-up');
             }
 
 
@@ -192,13 +203,12 @@ class AppGui {
 
         //buy item
         $(document).on('click', '.buy-item', function(e) {
-console.log("Händer!");
             e.preventDefault();
             let activeList = AppGui.findActiveList();
 
             //get data-index from the item clicked
             let itemIndex = $(this).closest('tr').data("index");
-            
+
             //the item is now marked as bought, but
             //...how do we replace glyphicon-unchecked with glyphicon-ok??
             //$(this).children('span').removeClass("glyphicon-unchecked");
@@ -210,7 +220,7 @@ console.log("Händer!");
 				$(this).children('span').removeClass("glyphicon-unchecked");
 				$(this).children('span').addClass(" glyphicon-ok");
 				activeList.buyIndex(itemIndex);
-            
+
 			}else if($(this).children('span').hasClass("glyphicon-ok")){
 				// Icon has now been unchecked
 				$(this).children('span').removeClass("glyphicon-ok");
@@ -270,6 +280,10 @@ console.log("Händer!");
 
             AppGui.printList(activeList.items);
 
+            // Toggles form visibility in Mobile View
+            $('#new-item-form').addClass('hidden-xs');
+            $('.add-new-item-mobile').show();
+
             $('.item-form-name').val('');
             $('.item-form-qty').val('');
         });
@@ -288,7 +302,7 @@ console.log("Händer!");
                 item.name +
                 "</td><td>" +
                 item.quantity +
-                "</td><td " + "data-index='" + index + "'class='remove-item' ><span class='glyphicon glyphicon-remove'></span></td></tr>");
+                "</td><td " + "data-index='" + index + "'class='remove-item' ><span class='glyphicon glyphicon-trash'></span></td></tr>");
         });
     }
 }
