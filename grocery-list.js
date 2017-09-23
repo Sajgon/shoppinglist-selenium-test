@@ -94,6 +94,10 @@ module.exports = class GroceryList {
     buyIndex(indexOfItem){
         this.items[indexOfItem].bought = true;
     }
+	
+	unboughtIndex(indexOfItem){
+        this.items[indexOfItem].bought = false;
+    }
 
     sortAlphabetical(arg) {
         // calling the function with an true or false arg

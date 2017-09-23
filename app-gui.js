@@ -175,30 +175,31 @@ class AppGui {
 
         //buy item
         $(document).on('click', '.buy-item', function(e) {
-
+console.log("Händer!");
             e.preventDefault();
             let activeList = AppGui.findActiveList();
 
             //get data-index from the item clicked
             let itemIndex = $(this).closest('tr').data("index");
-            activeList.buyIndex(itemIndex);
-
+            
             //the item is now marked as bought, but
             //...how do we replace glyphicon-unchecked with glyphicon-ok??
-            $(this).children('span').removeClass("glyphicon-unchecked");
-            $(this).children('span').addClass("glyphicon-ok");
+            //$(this).children('span').removeClass("glyphicon-unchecked");
+            //$(this).children('span').addClass("glyphicon-ok");
 
-			/* This is not working because list is printed afterwards to ($this) is not working
 			// Toggle bought/unbougt icon
 			if($(this).children('span').hasClass("glyphicon-unchecked")){
 				// Icon has now been checked
 				$(this).children('span').removeClass("glyphicon-unchecked");
 				$(this).children('span').addClass(" glyphicon-ok");
+				activeList.buyIndex(itemIndex);
+            
 			}else if($(this).children('span').hasClass("glyphicon-ok")){
 				// Icon has now been unchecked
 				$(this).children('span').removeClass("glyphicon-ok");
 				$(this).children('span').addClass(" glyphicon-unchecked");
-			}*/
+				activeList.unboughtIndex(itemIndex);
+			}
 
 
             AppGui.printList(activeList.items);

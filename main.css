@@ -19,6 +19,10 @@ input {
     letter-spacing: 0.05em;
 }
 
+.all-items > tr > td:first-child, .all-items > tr > td:last-child{
+	cursor: pointer;
+}
+
 .header-container{
 	background-color: #212121;
 	color: #F7F7F7;
