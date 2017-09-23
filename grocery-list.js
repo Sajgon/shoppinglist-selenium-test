@@ -96,8 +96,31 @@ module.exports = class GroceryList {
     }
 	
 	unboughtIndex(indexOfItem){
+		console.log(this.items);
         this.items[indexOfItem].bought = false;
     }
+	
+	setItemBought(itemName){
+		 // Finn item med korrekt namn
+        for (var i = 0; i < this.items.length; i++) {
+            if (this.items[i].name === itemName) {
+                // Varan är nu köpt
+                this.items[i].bought = true;
+				break
+			}
+		}
+	}
+	
+	setItemUnbought(itemName){
+		 // Finn item med korrekt namn
+        for (var i = 0; i < this.items.length; i++) {
+            if (this.items[i].name === itemName) {
+                // Varan är nu oköpt
+                this.items[i].bought = false;
+				break
+			}
+		}
+	}
 
     sortAlphabetical(arg) {
         // calling the function with an true or false arg

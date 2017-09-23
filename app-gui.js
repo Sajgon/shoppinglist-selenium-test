@@ -192,34 +192,42 @@ class AppGui {
 
         //buy item
         $(document).on('click', '.buy-item', function(e) {
-console.log("Händer!");
             e.preventDefault();
             let activeList = AppGui.findActiveList();
 
             //get data-index from the item clicked
-            let itemIndex = $(this).closest('tr').data("index");
-            
-            //the item is now marked as bought, but
-            //...how do we replace glyphicon-unchecked with glyphicon-ok??
-            //$(this).children('span').removeClass("glyphicon-unchecked");
-            //$(this).children('span').addClass("glyphicon-ok");
-
+			let itemIndex = $(this).closest('tr').data("index");
+			let itemName = $(this)[0].nextSibling.nextSibling.innerHTML;
+           
 			// Toggle bought/unbougt icon
 			if($(this).children('span').hasClass("glyphicon-unchecked")){
+				//the item is now marked as bought
 				// Icon has now been checked
 				$(this).children('span').removeClass("glyphicon-unchecked");
 				$(this).children('span').addClass(" glyphicon-ok");
-				activeList.buyIndex(itemIndex);
+				//activeList.buyIndex(itemIndex);
+				activeList.setItemBought(itemName);
             
 			}else if($(this).children('span').hasClass("glyphicon-ok")){
+				//the item is now marked as unbought
 				// Icon has now been unchecked
 				$(this).children('span').removeClass("glyphicon-ok");
 				$(this).children('span').addClass(" glyphicon-unchecked");
-				activeList.unboughtIndex(itemIndex);
+				//activeList.unboughtIndex(itemIndex);
+				activeList.setItemUnbought(itemName);
 			}
 
+			// Get checked Radio btn value
+			if($("#showAllItems").is(':checked')){
+				AppGui.printList(activeList.items);
+			}else if($("#showBoughtItems").is(':checked')){
+				AppGui.printList(activeList.filterBoughtItems());
+			}else if($("#showUnboughtItems").is(':checked')){
+				AppGui.printList(activeList.filterUnboughtItems());
+			}
 
-            AppGui.printList(activeList.items);
+			//$("#showAllItems").prop("checked", true);
+            //AppGui.printList(activeList.items);
 
         });
 
