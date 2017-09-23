@@ -217,7 +217,6 @@ class AppGui {
 				$(this).children('span').removeClass("glyphicon-unchecked");
 				$(this).children('span').addClass(" glyphicon-ok");
 				
-				//activeList.buyIndex(itemIndex);
 				activeList.setItemBought(itemName);
             
 			}else if($(this).children('span').hasClass("glyphicon-ok")){
@@ -226,11 +225,11 @@ class AppGui {
 				$(this).children('span').removeClass("glyphicon-ok");
 				$(this).children('span').addClass(" glyphicon-unchecked");
 				
-				//activeList.unboughtIndex(itemIndex);
 				activeList.setItemUnbought(itemName);
 			}
 
 			// Get checked Radio btn value
+			// then print out filtered items
 			if($("#showAllItems").is(':checked')){
 				AppGui.printList(activeList.items);
 			}else if($("#showBoughtItems").is(':checked')){
@@ -238,9 +237,6 @@ class AppGui {
 			}else if($("#showUnboughtItems").is(':checked')){
 				AppGui.printList(activeList.filterUnboughtItems());
 			}
-
-			//$("#showAllItems").prop("checked", true);
-            //AppGui.printList(activeList.items);
 
         });
 
