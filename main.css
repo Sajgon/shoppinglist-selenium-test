@@ -108,6 +108,7 @@ td{
 	width: 8%;
 	text-align: center;
 }
+
 .btn-secondary{
 	margin: 2px 0px 10px 1px;
 	background-color: #f7f7f7;
@@ -186,12 +187,18 @@ button:focus {outline:0;}
 }
 
 #preset {
+    position: fixed;
+    top: 20px;
     font-size: 28px;
 }
 
-.glyphicon-chevron-down {
+.glyphicon-chevron-down,  .glyphicon-chevron-up{
     font-size: 12px;
     margin-left: 6px;
+}
+
+.selectedRow {
+    background: red;
 }
 
 @media screen and (max-width: 767px) {
@@ -200,9 +207,9 @@ button:focus {outline:0;}
         padding-top: 8vh;
     }
 
-    .back-button {
-        padding-bottom: 8px;
-    }
+    // .back-button {
+    //     padding-bottom: 8px;
+    // }
 
     .submit-btn {
         margin-top: 8px;
@@ -210,7 +217,7 @@ button:focus {outline:0;}
 
     .sort-btn {
         display: none;
-        font-size: 12px;
+        font-size: 6px;
     }
 
     table {
