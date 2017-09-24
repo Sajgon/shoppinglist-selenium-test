@@ -209,22 +209,22 @@ class AppGui {
             //get data-index from the item clicked
 			let itemIndex = $(this).closest('tr').data("index");
 			let itemName = $(this)[0].nextSibling.nextSibling.innerHTML;
-   
+
 			// Toggle bought/unbougt icon
 			if($(this).children('span').hasClass("glyphicon-unchecked")){
 				//the item is now marked as bought
 				// Icon has now been checked
 				$(this).children('span').removeClass("glyphicon-unchecked");
 				$(this).children('span').addClass(" glyphicon-ok");
-				
+
 				activeList.setItemBought(itemName);
-            
+
 			}else if($(this).children('span').hasClass("glyphicon-ok")){
 				//the item is now marked as unbought
 				// Icon has now been unchecked
 				$(this).children('span').removeClass("glyphicon-ok");
 				$(this).children('span').addClass(" glyphicon-unchecked");
-				
+
 				activeList.setItemUnbought(itemName);
 			}
 
@@ -303,11 +303,11 @@ class AppGui {
 			var itemBoughtClass = "glyphicon-unchecked";
 			if(item.bought){itemBoughtClass = "glyphicon-ok"}
 
-            $('.all-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td>" +
+            $('.all-items').append("<tr data-index='" + index + "' ><td class='buy-item'><span style='color: #007AFF;' class='glyphicon "+itemBoughtClass+"'></span></td><td id='list-obj-cat'>" +
                 item.category +
-                "</td><td>" +
+                "</td><td id='list-obj-name'>" +
                 item.name +
-                "</td><td>" +
+                "</td><td id='list-obj-qty'>" +
                 item.quantity +
                 "</td><td " + "data-index='" + index + "'class='remove-item' ><span class='glyphicon glyphicon-trash'></span></td></tr>");
         });

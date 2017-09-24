@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "s-test": "node ../node_modules/selenium-cucumber-js/index.js && exit 0",
-    "s-ola": "node ../node_modules/selenium-cucumber-js/index.js -f ./features/add-list.feature & exit 0"
+    "s-ola": "node ../node_modules/selenium-cucumber-js/index.js -f ./features/add-item.feature & exit 0"
   },
   "author": "",
   "license": "ISC",
