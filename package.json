@@ -6,7 +6,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "cucumber": "cucumber-js & exit 0",
-        "only": "cucumber-js features/remove-item.feature & exit 0",
+		
+        "add-item": "cucumber-js features/add-item.feature & exit 0",
+        "add-list": "cucumber-js features/add-list.feature & exit 0",
+        "buy": "cucumber-js features/buy.feature & exit 0",
+        "get-bought-items": "cucumber-js features/get-bought-items.feature & exit 0",
+        "get-unbought-items": "cucumber-js features/get-unbought-items.feature & exit 0",
+        "remove-item": "cucumber-js features/remove-item.feature & exit 0",
+        "sort-alphabetical": "cucumber-js features/sort-alphabetical.feature & exit 0",
+        "sort-by-category": "cucumber-js features/sort-by-category.feature & exit 0",
+		
         "pelle": "cucumber-js features/add-item.feature & exit 0",
         "ola": "cucumber-js features/sort-alphabetical.feature & exit 0",
         "david": "cucumber-js features/get-bought-items.feature & exit 0",

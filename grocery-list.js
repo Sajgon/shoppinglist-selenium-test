@@ -15,11 +15,11 @@ module.exports = class GroceryList {
         GroceryList.allInstances = GroceryList.allInstances || [];
 
 		// Check that a list with that name doesn't exist already
-		GroceryList.allInstances.forEach(function(list){
+		/*GroceryList.allInstances.forEach(function(list){
             if(list.name == name){
 				throw new Error("There's already a list with that name.");
 			}
-        });
+        });*/
 
         // Push this to the static property allInstances
         GroceryList.allInstances.push(this);
