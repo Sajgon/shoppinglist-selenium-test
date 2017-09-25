@@ -11,10 +11,13 @@ module.exports = function () {
         let listBtn = await $id('addList');
         let listInputName = await $css('#listNameInput');
 
+        await driver.sleep(1000);
+
         listInputName[0].sendKeys('A Test List');
         await listBtn.click();
 
-        await driver.sleep(500);
+        await driver.sleep(1000);
+
     });
 
     this.Given(/^that I have clicked the list$/, async function () {
@@ -22,7 +25,7 @@ module.exports = function () {
        let selectList = await driver.findElement(by.css('.select-list-parent'));
        await selectList.click();
 
-       await driver.sleep(200);
+       await driver.sleep(1000);
     });
 
     this.When(/^I enter item name in the input field$/, async function () {
@@ -30,7 +33,7 @@ module.exports = function () {
         let itemInputName = await $css('#item-form-name');
         itemInputName[0].sendKeys(TestObj.name);
 
-        await driver.sleep(200);
+        await driver.sleep(1000);
     });
 
     this.When(/^I enter item qty in the input field$/, async function () {
@@ -38,7 +41,7 @@ module.exports = function () {
         let itemInputName = await $css('#item-form-qty');
         itemInputName[0].sendKeys(TestObj.qty);
 
-        await driver.sleep(200);
+        await driver.sleep(1000);
 
     });
 
@@ -63,7 +66,7 @@ module.exports = function () {
 
         let submitBtn = await driver.findElement(by.css('.submit-btn'));
         await submitBtn.click();
-        await driver.sleep(600);
+        await driver.sleep(2000);
     });
 
     this.Then(/^a item will be visible in the listview$/, async function () {
