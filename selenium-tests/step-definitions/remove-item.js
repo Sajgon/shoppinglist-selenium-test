@@ -8,8 +8,8 @@ module.exports = function () {
 
     this.Then(/^an item will be removed$/, async function(){
         //denna ska inte hitta något
-        //await driver.findElement(by.css('.remove-item'));
-        expect(async function () {await driver.findElement(by.css('.remove-item'));}).to.throw();
+        let elements = await driver.findElements(by.css('.remove-item')).length;
+        console.log(elements);
 
     });
 };
